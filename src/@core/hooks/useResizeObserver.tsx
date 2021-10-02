@@ -5,9 +5,9 @@ export interface ResizeObserverEntry {
   contentRect: DOMRectReadOnly;
 }
 
-export const useResizeObserver = (ref: RefObject<HTMLElement> | string, callback?: (entry: DOMRectReadOnly) => void): void => {
-  const [width, setWidth] = useState();
-  const [height, setHeight] = useState();
+export const useResizeObserver = (ref: RefObject<HTMLElement> | string, callback?: (entry: DOMRectReadOnly) => void): number[] => {
+  const [width, setWidth] = useState<number>(0);
+  const [height, setHeight] = useState<number>(0);
 
   const handleResize = useCallback(
     (entries: ResizeObserverEntry[]) => {
@@ -22,9 +22,7 @@ export const useResizeObserver = (ref: RefObject<HTMLElement> | string, callback
       if (callback) {
         callback(entry.contentRect);
       }
-    },
-    [callback]
-  );
+    }, [callback]);
 
   useLayoutEffect(() => {
     const res = typeof ref === 'string' ? document.querySelector(ref) : ref.current;
@@ -33,12 +31,16 @@ export const useResizeObserver = (ref: RefObject<HTMLElement> | string, callback
       return;
     }
 
-    let RO = new ResizeObserver((entries: ResizeObserverEntry[]) => handleResize(entries));
-    RO.observe(res);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    let resizeObserver: ResizeObserver = new ResizeObserver((entries: ResizeObserverEntry[]) => {
+      handleResize(entries);
+    });
+    resizeObserver.observe(res);
 
     return () => {
-      RO.disconnect();
-      RO = null;
+      resizeObserver.disconnect();
+      (resizeObserver as any) = null;
     };
   }, [ref]);
 
