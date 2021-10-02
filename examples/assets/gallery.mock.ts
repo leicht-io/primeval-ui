@@ -1,4 +1,4 @@
-import {IGallery} from '../../src/types';
+import {IGallery} from '../../src';
 
 export const galleryMockResponse: IGallery = {
   'id': 1,

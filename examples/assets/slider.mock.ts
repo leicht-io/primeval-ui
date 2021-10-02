@@ -1,4 +1,4 @@
-import {ISlide} from '../../src/types';
+import {ISlide} from '../../src';
 
 export const sliderMockResponse: ISlide[] = [{
   'id': 12,

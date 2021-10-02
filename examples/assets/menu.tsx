@@ -1,6 +1,6 @@
 import {IMenuItem} from '../../src';
 
-export const MenuMock: IMenuItem[] = [
+export const Menu: IMenuItem[] = [
     {
         title: 'Home',
         link: '/',
