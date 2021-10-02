@@ -1,8 +1,8 @@
 import {IProps} from './types';
-import React, {ReactElement} from 'react';
+import React from 'react';
 import './UITextArea.scss';
 
-export const UITextArea = React.memo((props: IProps): ReactElement => {
+export const UITextArea = React.memo((props: IProps): React.ReactElement => {
   const [focus, setFocused] = React.useState<boolean>(false);
 
   return (

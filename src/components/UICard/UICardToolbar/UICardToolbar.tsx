@@ -1,9 +1,9 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import {IProps} from './types';
 import './UICardToolbar.scss';
 import {UIIcon} from '../../UIIcon';
 
-export const UICardToolbar = (props: IProps): ReactElement => {
+export const UICardToolbar = (props: IProps): React.ReactElement => {
   return (
     <div className={ 'ui-card-toolbar' }>
       <div className="ui-icons">

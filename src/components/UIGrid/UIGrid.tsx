@@ -1,8 +1,8 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import './UIGrid.scss';
 import {IProps} from './types';
 
-export const UIGrid = (props: IProps): ReactElement => {
+export const UIGrid = (props: IProps): React.ReactElement => {
   const getClasses = () => {
     const centerVertical: string = props.centerVertical ? 'grid--align-center-vertical' : '';
     const columns: string = props.columns ? 'grid-' + props.columns + '-columns' : '';
@@ -13,7 +13,7 @@ export const UIGrid = (props: IProps): ReactElement => {
 
   return (
     <div className={ 'grid-container ' + getClasses() }>
-      { props.children }
+      {props.children}
     </div>
   );
 };

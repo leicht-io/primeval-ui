@@ -1,9 +1,9 @@
 import {IProps} from './types';
-import React, {ReactElement} from 'react';
+import React from 'react';
 import {UITypography} from '../UITypography';
 import './UICard.scss';
 
-export const UICard = (props: IProps): ReactElement => {
+export const UICard = (props: IProps): React.ReactElement => {
   const [loaded, setLoaded] = React.useState<boolean>(false);
 
   const getImage = () => {

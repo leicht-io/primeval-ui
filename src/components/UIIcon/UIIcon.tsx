@@ -1,9 +1,9 @@
 import {IProps} from './types';
 import './UIIcon.scss';
-import React, {ReactElement} from 'react';
+import React from 'react';
 import {icons} from './icons';
 
-export const UIIcon = (props: IProps): ReactElement => {
+export const UIIcon = (props: IProps): React.ReactElement => {
   return (
     <div
       onClick={ props.onClick }

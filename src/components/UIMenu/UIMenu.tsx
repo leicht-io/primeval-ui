@@ -1,10 +1,10 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import './UIMenu.scss';
 import {IProps} from './types';
 import {UIIcon} from '../UIIcon';
 import {IMenuItem} from '../../types';
 
-export const UIMenu = (props: IProps): ReactElement => {
+export const UIMenu = (props: IProps): React.ReactElement => {
   let xDown: any = null;
   let yDown: any = null;
   let xDiff: any = null;

@@ -1,9 +1,9 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import './UIHeader.scss';
 import {IProps} from './types';
 import {UICard} from '../UICard';
 
-export const UIHeader = React.memo((props: IProps): ReactElement => {
+export const UIHeader = React.memo((props: IProps): React.ReactElement => {
   const getContent = () => {
     if (props.multiContent) {
       return (

@@ -1,19 +1,19 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import './UITags.scss';
 import {IProps} from './types';
 
-export const UITags = React.memo((props: IProps): ReactElement => {
+export const UITags = React.memo((props: IProps): React.ReactElement => {
   const getTags = () => {
     return props.tags.map((tag, index) => {
       return <div key={ index } className={ 'ui-tag ui-tag--' + tag.type }>
-        { tag.name }
+        {tag.name}
       </div>;
     });
   };
 
   return (
     <div className="ui-tags">
-      { getTags() }
+      {getTags()}
     </div>
   );
 });

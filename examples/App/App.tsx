@@ -18,7 +18,6 @@ export const App = (): React.ReactElement => {
     const [showModal2, setShowModal2] = React.useState<boolean>(false);
     const [imageSource, setImageSource] = React.useState<string | null>(null);
     const [slides, setSlides] = React.useState<ISlide[] | null>(null);
-    const [title, setTitle] = React.useState<string | null>(null);
     const [notifications, setNotifications] = React.useState<{ type: any, title: string, message: string }[]>([{
         type: "error",
         Title: "Error!",
@@ -30,8 +29,6 @@ export const App = (): React.ReactElement => {
             setImageSource('https://ni.leicht.io/wadden_sea.0039e6c00cf93aed50f037fcfbdfa31f5517546e_original.jpg');
 
             setSlides(sliderMockResponse);
-
-            setTitle('Leicht.IO React UI Component Library');
         }, 2500);
     }, []);
 

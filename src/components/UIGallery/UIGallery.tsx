@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import './UIGallery.scss';
 import {IProps} from './types';
 import Glide from 'react-glidejs';
@@ -6,6 +6,7 @@ import 'react-glidejs/dist/index.css';
 import {IPhoto} from '../../types';
 import {UICard} from '../UICard';
 
+// TODO: Move this function
 const getSkeletonArray = (amount: number) => {
   const tempArray: null[] = [];
   for (let i = 0; i < amount; i++) {
@@ -15,7 +16,7 @@ const getSkeletonArray = (amount: number) => {
   return tempArray;
 };
 
-export const UIGallery = (props: IProps): ReactElement => {
+export const UIGallery = (props: IProps): React.ReactElement => {
   const gliderRef = React.useRef(null);
 
   const [data, setData] = React.useState<null[] | IPhoto[]>(getSkeletonArray(props.skeletons || 10));

@@ -1,9 +1,9 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import {IProps} from './types';
 import './UIModal.scss';
 import {UIIcon} from '../UIIcon';
 
-export const UIModal = (props: IProps): ReactElement | null => {
+export const UIModal = (props: IProps): React.ReactElement | null => {
   const keyDownCallback = (event) => handleKeyDown(event);
 
   React.useEffect(() => {
@@ -51,7 +51,7 @@ export const UIModal = (props: IProps): ReactElement | null => {
           } }>
           <div className="ui-modal--wrapper">
             <div className="ui-modal--title-wrapper">
-              <div className="ui-modal--title"><h5>{ props.title }</h5></div>
+              <div className="ui-modal--title"><h5>{props.title}</h5></div>
               <div className="ui-modal--buttons">
                 <div className="ui-modal--buttons-close" onClick={ () => {
                   if (props.onHide) {
@@ -78,7 +78,7 @@ export const UIModal = (props: IProps): ReactElement | null => {
           } }>
           <div className="ui-modal--wrapper">
             <div className="ui-modal--title-wrapper">
-              <div className="ui-modal--title"><h5>{ props.title }</h5></div>
+              <div className="ui-modal--title"><h5>{props.title}</h5></div>
               <div className="ui-modal--buttons">
                 <div className="ui-modal--buttons-close" onClick={ () => {
                   if (props.onHide) {
@@ -88,7 +88,7 @@ export const UIModal = (props: IProps): ReactElement | null => {
               </div>
             </div>
             <div className="ui-modal--content--wrapper">
-              <div className="ui-modal--content">{ props.children }</div>
+              <div className="ui-modal--content">{props.children}</div>
             </div>
           </div>
         </div>

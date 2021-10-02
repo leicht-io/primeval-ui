@@ -1,8 +1,8 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import {IProps} from './types';
 import './UIButton.scss';
 
-export const UIButton = React.memo((props: IProps): ReactElement => {
+export const UIButton = React.memo((props: IProps): React.ReactElement => {
   return (
     <button
       tabIndex={ props.tabIndex || -1 }

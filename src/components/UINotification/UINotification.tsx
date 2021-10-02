@@ -1,9 +1,9 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import {IProps} from './types';
 import './UINotification.scss';
 import {UITypography} from '../UITypography';
 
-export const UINotification = React.memo((props: IProps): ReactElement => {
+export const UINotification = React.memo((props: IProps): React.ReactElement => {
   const [render, setRender] = React.useState(true);
 
   React.useEffect(() => {

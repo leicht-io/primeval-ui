@@ -1,8 +1,8 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import {IProps} from './types';
 import './UITyphography.scss';
 
-export const UITypography = React.memo((props: IProps): ReactElement => {
+export const UITypography = React.memo((props: IProps): React.ReactElement => {
   const [classes, setClasses] = React.useState<string>('');
 
   React.useEffect(() => {
