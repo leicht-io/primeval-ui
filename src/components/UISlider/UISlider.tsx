@@ -38,7 +38,9 @@ export const UISlider = (props: IProps): React.ReactElement => {
           <ul className="glide__slides">
             {props.slides.map((slide, index) => {
               return (
-                <li className="glide__slide slider-frame" key={ index }
+                <li
+                  className="glide__slide slider-frame"
+                  key={ index }
                   style={ {
                     backgroundImage: 'url(' + (props.basePath ? props.basePath : '') + slide.headerImage.fullSize.path + ')',
                     backgroundPosition: 'center 45%'

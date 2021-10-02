@@ -13,8 +13,10 @@ export const Typography = (): React.ReactElement => {
     return (
         <>
             <UIHeader
-                title={{value: "Typography", skeleton: true}}
-                imageUrl="https://leicht.io//assets/images/header-7.7f48e486decb2b9246586c0f33d03c942e25dcb23bb5f5d33dff9876f59ca2f9.jpg"/>
+                size="small"
+                gradient={true}
+                title={{value: "Typography", skeleton: true}}/>
+
             <UIPageContainer>
                 <UITypography type={'h3'}>Typography</UITypography>
                 <UITypography type={'h1'}>Heading 1</UITypography>

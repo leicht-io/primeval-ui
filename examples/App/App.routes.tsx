@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Redirect, Route, Switch} from 'react-router-dom';
-import {FormElements, Gallery, GridAndCards, Icons, Typography} from "./domain";
+import {FormElements, Gallery, GridAndCards, Icons, Other, Typography} from "./domain";
 import {App} from "./App";
 
 export default (
@@ -10,6 +10,7 @@ export default (
         <Route path="/icons" component={() => <Icons/>}/>
         <Route path="/gallery" component={() => <Gallery/>}/>
         <Route path="/grid-and-cards" component={() => <GridAndCards/>}/>
+        <Route path="/other" component={() => <Other/>}/>
         <Route path="/" component={() => <App/>}/>
 
         <Redirect to="/"/>

@@ -6,7 +6,6 @@ import {useHistory} from "react-router-dom";
 
 export const Root = (props: { children: any }): React.ReactElement => {
     const history = useHistory();
-
     const [menuItems] = React.useState<IMenuItem[]>(MenuMock);
 
     return (
@@ -19,7 +18,6 @@ export const Root = (props: { children: any }): React.ReactElement => {
                     history.push(destination.link as any);
                 }}
             />
-
             {props.children}
         </>
     );

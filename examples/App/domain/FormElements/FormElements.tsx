@@ -5,8 +5,10 @@ export const FormElements = (): React.ReactElement => {
     return (
         <>
             <UIHeader
-                title={{value: "Form Elements", skeleton: true}}
-                imageUrl="https://leicht.io//assets/images/header-7.7f48e486decb2b9246586c0f33d03c942e25dcb23bb5f5d33dff9876f59ca2f9.jpg"/>
+                size={"small"}
+                gradient={true}
+                breadcrumbs={"Home / Form Elements"}
+                title={{value: "Form Elements", skeleton: true}} />
 
             <UIPageContainer>
                 <UITypography type="h3">Buttons</UITypography>

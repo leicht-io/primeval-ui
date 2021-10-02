@@ -20,5 +20,8 @@ export const MenuMock: IMenuItem[] = [
     }, {
         title: 'Grids & Cards',
         link: '/grid-and-cards'
+    }, {
+        title: 'Other',
+        link: '/other'
     }
 ];

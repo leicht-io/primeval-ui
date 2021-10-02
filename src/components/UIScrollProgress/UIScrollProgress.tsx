@@ -24,7 +24,9 @@ export const UIScrollProgress = React.memo((): React.ReactElement => {
     const scrollHeight: string = 'scrollHeight';
     const value = (documentElement[scrollTop] || documentBody[scrollTop]) / ((documentElement[scrollHeight] || documentBody[scrollHeight]) - documentElement.clientHeight) * 100;
 
-    setValue(value);
+    if(!isNaN(value)) {
+      setValue(value);
+    }
   };
 
   return <progress className="ui-scroll-progress" max={ 100 } value={ value } />;
