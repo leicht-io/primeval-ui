@@ -9,6 +9,7 @@ import {
     UIPageContainer,
     UITypography
 } from "../../../../src";
+import {useTimeout} from "../../../../src/@core";
 
 export const Other = (): React.ReactElement => {
     const [showModal1, setShowModal1] = React.useState<boolean>(false);
@@ -20,11 +21,9 @@ export const Other = (): React.ReactElement => {
     }, {type: "success", message: "This is a success notification", title: "Success!"}]);
     const [imageSource, setImageSource] = React.useState<string | null>(null);
 
-    React.useEffect(() => {
-        setTimeout(() => {
-            setImageSource('https://ni.leicht.io/wadden_sea.0039e6c00cf93aed50f037fcfbdfa31f5517546e_original.jpg');
-        }, 2500);
-    }, []);
+    useTimeout(() => {
+        setImageSource('https://ni.leicht.io/wadden_sea.0039e6c00cf93aed50f037fcfbdfa31f5517546e_original.jpg');
+    }, 2500);
 
     return (
         <>
@@ -113,8 +112,8 @@ export const Other = (): React.ReactElement => {
                 title={'Modal Title'}
                 show={showModal2}
                 onHide={() => {
-                setShowModal2(false);
-            }}>
+                    setShowModal2(false);
+                }}>
                 <UITypography type="p">With HTML content</UITypography>
             </UIModal>
 

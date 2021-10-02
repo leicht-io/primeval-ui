@@ -1,15 +1,14 @@
 import React from 'react';
 import {ISlide, UISlider} from '../../src';
 import {sliderMockResponse} from '../assets/slider.mock';
+import {useTimeout} from "../../src/@core";
 
 export const App = (): React.ReactElement => {
     const [slides, setSlides] = React.useState<ISlide[] | null>(null);
 
-    React.useEffect(() => {
-        setTimeout(() => {
-            setSlides(sliderMockResponse);
-        }, 2500);
-    }, []);
+    useTimeout(() => {
+        setSlides(sliderMockResponse);
+    }, 2500)
 
     return (
         <>
