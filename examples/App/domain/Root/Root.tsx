@@ -1,5 +1,5 @@
 import * as React from "react";
-import {IMenuItem, UIMenu, UIProgress} from "../../../../src";
+import {IMenuItem, UIMenu, UIScrollProgress} from "../../../../src";
 import {logo} from "../../../assets/logo";
 import {MenuMock} from "../../../assets/menuMock";
 import {useHistory} from "react-router-dom";
@@ -11,7 +11,7 @@ export const Root = (props: { children: any }): React.ReactElement => {
 
     return (
         <>
-            <UIProgress/>
+            <UIScrollProgress/>
             <UIMenu
                 menuItems={menuItems}
                 logo={logo}

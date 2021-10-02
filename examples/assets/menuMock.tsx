@@ -9,8 +9,8 @@ export const MenuMock: IMenuItem[] = [
         title: 'Typography',
         link: '/typography'
     }, {
-        title: 'Buttons',
-        link: '/buttons'
+        title: 'Form Elements',
+        link: '/form-elements'
     }, {
         title: 'Icons',
         link: '/icons'
@@ -19,6 +19,6 @@ export const MenuMock: IMenuItem[] = [
         link: '/gallery'
     }, {
         title: 'Grids & Cards',
-        link: '/grids-and-cards'
+        link: '/grid-and-cards'
     }
 ];
