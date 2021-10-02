@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import "../../@core/styles/@theme.scss";
 
 // TODO: This file should be refactored completely
@@ -85,7 +87,7 @@ body.nav--disable-scroll {
     }
 
     svg:last-child {
-      height: $navigation-height / 1.5;
+      height: math.div($navigation-height, 1.5);
       fill: $white;
       transition: all 0.250s linear;
     }
@@ -140,7 +142,7 @@ body.nav--disable-scroll {
       }
 
       svg:last-child {
-        height: $navigation-height / 2;
+        height: $navigation-height * 0.5;
         fill: #242424;
         transition: all 0.250s linear;
       }
