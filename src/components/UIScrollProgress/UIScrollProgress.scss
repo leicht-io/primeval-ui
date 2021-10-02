@@ -1,12 +1,12 @@
 @import "../../@core/styles/@theme.scss";
 
-.ui-reading-position-indicator {
+.ui-scroll-progress {
   position: fixed;
   left: 0;
   top: 0;
 
   width: 100%;
-  height: $base-spacing / 2;
+  height: $base-spacing * 0.5;
 
   -webkit-appearance: none;
   -moz-appearance: none;

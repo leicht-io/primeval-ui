@@ -3,3 +3,4 @@ dist
 .cache
 .idea
 .stylelintcache
+/.parcel-cache/
