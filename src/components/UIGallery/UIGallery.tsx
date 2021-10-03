@@ -45,6 +45,18 @@ export const UIGallery = (props: IProps): React.ReactElement => {
     }
   };
 
+  const getThumbnailImageUrl = (photo: IPhoto): string => {
+    let url: string = (props.baseUrl ? props.baseUrl : '');
+
+    if (photo && photo.mediumThumbPath) {
+      url += photo.mediumThumbPath;
+    } else if (photo && photo.fullSizePath) {
+      url += photo.fullSizePath;
+    }
+
+    return url;
+  };
+
   return (
     <>
       {showSlider && (
@@ -69,7 +81,8 @@ export const UIGallery = (props: IProps): React.ReactElement => {
             {props.gallery && props.gallery.photos && props.gallery.photos.map((photo, index) => {
               return (
                 <div key={ index } className="slider__img_wrapper">
-                  <img alt={ `Slide #${index}` } src={ (props.baseUrl ? props.baseUrl : '') + photo.fullSizePath } />
+                  <img alt={ `Slide #${index}` }
+                    src={ (props.baseUrl ? props.baseUrl : '') + photo.fullSizePath } />
                 </div>
               );
             })}
@@ -83,7 +96,7 @@ export const UIGallery = (props: IProps): React.ReactElement => {
             <div className="grid-item" key={ index }>
               <UICard
                 alt={ photo ? photo.description : '' }
-                backgroundUrl={ photo ? (props.baseUrl + photo.mediumThumbPath) : '' }
+                backgroundUrl={ getThumbnailImageUrl(photo) }
                 onClick={ () => {
                   if (photo) {
                     setIndex(index);

@@ -2,11 +2,11 @@ import {IHeaderImage} from './IHeaderImage';
 import {ITag} from './ITag';
 
 export interface ISlide {
-  id: number;
+  id?: number;
   title: string;
   content?: string;
   slug?: string;
-  excerpt: string;
+  excerpt?: string;
   readTimeInSeconds?: number;
   headerImage: IHeaderImage | string;
   tags?: ITag | null;

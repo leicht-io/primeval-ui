@@ -18,7 +18,7 @@ export const Gallery = (): React.ReactElement => {
                 gradient={true}/>
 
             <UIPageContainer>
-                <UIGallery baseUrl="https://ni.leicht.io/" gallery={gallery} skeletons={12}/>
+                <UIGallery gallery={gallery} skeletons={12}/>
             </UIPageContainer>
         </>
     );
