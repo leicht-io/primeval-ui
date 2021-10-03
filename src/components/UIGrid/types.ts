@@ -3,4 +3,5 @@ export interface IProps {
   row?: boolean;
   children?: any;
   centerVertical?: boolean;
+  centerItems?: boolean;
 }

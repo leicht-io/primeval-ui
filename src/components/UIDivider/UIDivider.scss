@@ -1,6 +1,15 @@
 @import "../../@core/styles/@theme.scss";
 
 .divider {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+
   width: 100%;
 
   &.divider-small {
@@ -38,5 +47,9 @@
     background: #f1f1f1;
 
     width: $base-spacing  * 10;
+  }
+
+  &.divider--grey {
+    border-top: 1px solid #f1f1f1;
   }
 }

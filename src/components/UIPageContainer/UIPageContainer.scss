@@ -1,6 +1,15 @@
 @import "../../@core/styles/@theme.scss";
 
 .ui-page-container {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+
   flex-grow: 1;
 
   max-width: $extended-content-width;
