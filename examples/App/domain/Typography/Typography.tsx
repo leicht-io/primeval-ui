@@ -17,7 +17,6 @@ export const Typography = (): React.ReactElement => {
                 title={{value: "Typography", skeleton: true}}/>
 
             <UIPageContainer>
-                <UITypography type={'h3'}>Typography</UITypography>
                 <UITypography type={'h1'}>Heading 1</UITypography>
                 <UITypography type={'h2'}>Heading 2</UITypography>
                 <UITypography type={'h3'}>Heading 3</UITypography>
