@@ -2,101 +2,57 @@ import React from 'react';
 import {IProps} from './types';
 import './UIModal.scss';
 import {UIIcon} from '../UIIcon';
+import {opacity, useBodyScrollLock, useEventListener} from '../../@core';
+import {animated, useTransition} from '@react-spring/web';
 
-export const UIModal = (props: IProps): React.ReactElement | null => {
-  const keyDownCallback = (event) => handleKeyDown(event);
-
-  React.useEffect(() => {
-    addEventListeners();
-  }, []);
-
-  React.useEffect(() => {
-    if (props.show) {
-      toggleBodyScrollLock(true);
-    } else {
-      toggleBodyScrollLock(false);
-    }
-  }, [props.show]);
-
-  const toggleBodyScrollLock = (lock: boolean): void => {
-    const body: HTMLElement | null = document.querySelector('body');
-
-    if (body) {
-      if (lock) {
-        body.classList.add('body--disable-scroll');
-      } else {
-        body.classList.remove('body--disable-scroll');
-      }
-    }
-  };
-
-  const addEventListeners = (): void => {
-    document.addEventListener('keydown', keyDownCallback);
-  };
-
-  const handleKeyDown = (event: KeyboardEvent): void => {
+// TODO: add loader to iframe content.
+export const UIModal = (props: IProps): React.ReactElement => {
+  useEventListener('keydown', (event) => {
     if (event.key === 'Escape' && props.onHide) {
       props.onHide();
     }
+  });
+
+  useBodyScrollLock(props.show, [props.show]);
+
+  const transitions = useTransition(props.show, opacity());
+
+  const getContent = (): React.ReactElement => {
+    if (props.type === 'IFRAME') {
+      return <iframe src={ props.iframeUrl } />;
+    } else {
+      return props.children;
+    }
   };
 
-  if (props.show) {
-    if (props.type === 'IFRAME') {
-      return (
-        <div className="ui-modal--container ui-modal--container-with-iframe ui-modal--container--visible"
-          onClick={ (event) => {
-            if ((event.target as HTMLInputElement).classList.contains('ui-modal--container') && props.onHide) {
-              props.onHide();
-            }
-          } }>
-          <div className="ui-modal--wrapper">
-            <div className="ui-modal--title-wrapper">
-              <div className="ui-modal--title"><h5>{props.title}</h5></div>
-              <div className="ui-modal--buttons">
-                <div className="ui-modal--buttons-close" onClick={ () => {
-                  if (props.onHide) {
-                    props.onHide();
-                  }
-                } }><UIIcon icon={ 'close' } /></div>
-              </div>
-            </div>
-            <div className="ui-modal--content--wrapper">
-              <div className="ui-modal--content">
-                <iframe src={ props.iframeUrl } />
-              </div>
+  return transitions((styles, item) => item && (
+    <animated.div
+      style={ styles }
+      className={ 'ui-modal--container ' + (props.type === 'IFRAME' ? 'ui-modal--container-with-iframe' : 'ui-modal--container-with-html') }
+      onClick={ (event) => {
+        if ((event.target as HTMLInputElement).classList.contains('ui-modal--container') && props.onHide) {
+          props.onHide();
+        }
+      } }>
+      <div className="ui-modal--wrapper">
+        <div className="ui-modal--title-wrapper">
+          <div className="ui-modal--title"><h5>{props.title}</h5></div>
+          <div className="ui-modal--buttons">
+            <div className="ui-modal--buttons-close" onClick={ () => {
+              if (props.onHide) {
+                props.onHide();
+              }
+            } }>
+              <UIIcon icon={ 'close' } />
             </div>
           </div>
         </div>
-      );
-    } else {
-      return (
-        <div className="ui-modal--container ui-modal--container-with-html ui-modal--container--visible"
-          onClick={ (event) => {
-            if ((event.target as HTMLInputElement).classList.contains('ui-modal--container') && props.onHide) {
-              props.onHide();
-            }
-          } }>
-          <div className="ui-modal--wrapper">
-            <div className="ui-modal--title-wrapper">
-              <div className="ui-modal--title"><h5>{props.title}</h5></div>
-              <div className="ui-modal--buttons">
-                <div className="ui-modal--buttons-close" onClick={ () => {
-                  if (props.onHide) {
-                    props.onHide();
-                  }
-                } }><UIIcon icon={ 'close' } /></div>
-              </div>
-            </div>
-            <div className="ui-modal--content--wrapper">
-              <div className="ui-modal--content">{props.children}</div>
-            </div>
+        <div className="ui-modal--content--wrapper">
+          <div className="ui-modal--content">
+            {getContent()}
           </div>
         </div>
-      );
-    }
-  } else {
-    return null;
-  }
+      </div>
+    </animated.div>
+  ));
 };
-
-UIModal.displayName = 'UIModal';

@@ -15,8 +15,6 @@
   align-content: stretch;
   z-index: 1000;
 
-  @include fadeOut();
-
   &.ui-modal--container-with-iframe {
     iframe {
       width: 100%;
@@ -27,10 +25,6 @@
 
   &.ui-modal--container-with-html .ui-modal--content {
     padding: $base-spacing * 3;
-  }
-
-  &.ui-modal--container--visible {
-    @include fadeIn();
   }
 
   .ui-modal--wrapper {
