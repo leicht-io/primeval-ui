@@ -7,8 +7,12 @@ export interface SocialIcon {
 }
 
 export interface IProps {
-  leftText?: string;
-  rightLink?: string;
-  rightText?: string;
+  left: {
+    text: string;
+  };
+  right: {
+    text: string;
+    link: string;
+  };
   socialIcons?: SocialIcon[];
 }
