@@ -2,24 +2,20 @@ import React from 'react';
 import {IProps} from './types';
 import './UINotification.scss';
 import {UITypography} from '../UITypography';
-import {useTimeout} from '../../@core';
+import {animated, useTransition} from '@react-spring/web';
+import {opacity} from '../../@core';
 
 export const UINotification = React.memo((props: IProps): React.ReactElement => {
-  const [render, setRender] = React.useState(true);
+  const transitions = useTransition(true, opacity());
 
-  useTimeout(() => {
-    setRender(false);
-  }, 150);
-
-  const getClasses = (): string => {
-    return `notification notification--${props.type} ${render ? 'notification--rendering' : 'notification--visible'}`;
-  };
-
-  return (
-    <div className={ getClasses() }>
-      <UITypography type={ 'p' }><strong>{props.title}</strong> {props.description}</UITypography>
-    </div>
-  );
+  return transitions((styles, item) => item && (
+    <animated.div
+      style={ styles }
+      className={ `notification notification--${props.type}` }>
+      <UITypography type={ 'p' }>
+        <strong>{props.title}</strong>
+        {props.description}
+      </UITypography>
+    </animated.div>
+  ));
 });
-
-UINotification.displayName = 'UINotification';
