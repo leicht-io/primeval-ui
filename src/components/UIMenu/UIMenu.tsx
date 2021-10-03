@@ -275,7 +275,7 @@ export const UIMenu = (props: IProps): React.ReactElement => {
             </div>
           </div>
           <div className="nav-content">
-            {props.menuItems.map((menuItem, index) => {
+            {props.menuItems.map((menuItem: IMenuItem, index: number) => {
               return (
                 <div
                   className={ 'nav-item ' + ((menuItem.menuItems && menuItem.menuItems.length > 0) ? 'nav-sub' : '') + (menuItem.active || hasActiveChildren(menuItem) ? ' active' : '') + (menuItem.button ? ' nav-item--primary' : '') }
@@ -290,5 +290,3 @@ export const UIMenu = (props: IProps): React.ReactElement => {
     </div>
   );
 };
-
-UIMenu.displayName = 'UIMenu';

@@ -8,6 +8,7 @@ export const UIInput = (props: IProps): React.ReactElement => {
   return (
     <div className={ `input-wrap ${focus ? 'input-wrap--focused' : ''}` }>
       <label>{props.label}</label>
+
       <input
         tabIndex={ props.tabIndex || -1 }
         onBlur={ () => {
@@ -23,5 +24,3 @@ export const UIInput = (props: IProps): React.ReactElement => {
     </div>
   );
 };
-
-UIInput.displayName = 'UIInput';

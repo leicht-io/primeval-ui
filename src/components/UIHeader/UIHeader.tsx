@@ -64,23 +64,20 @@ export const UIHeader = (props: IProps): React.ReactElement => {
       );
     } else {
       return transitions((styles, item) => item &&
-                    <h1 className={ props.title.value ? 'ui-header-title--visible' : 'ui-header-title--invisible' }>
-                      <animated.div style={ styles }>{props.title.value}</animated.div>
-                    </h1>
+                <h1 className={ props.title.value ? 'ui-header-title--visible' : 'ui-header-title--invisible' }>
+                  <animated.div style={ styles }>{props.title.value}</animated.div>
+                </h1>
       );
     }
-  }
-    ;
+  };
 
   const getTopGradient = () => {
     return (props.gradient && (<div className="header--bg-top-gradient" />));
-  }
-    ;
+  };
 
   const getBottomGradient = () => {
     return (props.gradient && (<div className="header--bg-bottom-gradient" />));
-  }
-    ;
+  };
 
   const getHeaderImage = () => {
     return (
@@ -88,8 +85,7 @@ export const UIHeader = (props: IProps): React.ReactElement => {
         element.currentTarget.style.setProperty('opacity', '1');
       } } />
     );
-  }
-    ;
+  };
 
   const getClasses = () => {
     let baseClasses: string = 'header header-full-width ';
