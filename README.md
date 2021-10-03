@@ -1,16 +1,16 @@
-# UI
+# Primeval UI
 
-UI is a small and minimalistic UI framework without any dependencies. The framework doesn't care about browser support since it is meant to work only in evergreen browsers.
+Primeval UI is a small and minimalistic UI framework without any dependencies. The framework doesn't care about browser support since it is meant to work only in evergreen browsers.
 It is meant to be lightweight and lightning fast without hundreds of components but only what's necessary. The CSS and JS is 20 KB in total when gzipped.
 
-For now and in the nearest future this framework is solely in beta state. I developed it for my own website: https://leicht.io
+For now and in the nearest future this framework is solely in beta state.
 
 ## Installation
 
 Use the package manager [npm](https://npm.com/) to install UI.
 
 ```bash
-npm install @leicht.io/ui
+npm install @leicht.io/primeval-ui
 ```
 
 ## Usage

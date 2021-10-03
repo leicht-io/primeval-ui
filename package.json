@@ -1,5 +1,5 @@
 {
-  "name": "@leicht.io/ui",
+  "name": "@leicht.io/primeval-ui",
   "version": "1.1.25",
   "description": "",
   "scripts": {
@@ -34,7 +34,7 @@
   "types": "./dist/types.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leicht-io/ui.git"
+    "url": "git+https://github.com/leicht-io/primeval-ui.git"
   },
   "husky": {
     "hooks": {
@@ -44,9 +44,9 @@
   "author": "Christian Leicht",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/leicht-io/ui/issues"
+    "url": "https://github.com/leicht-io/primeval-ui/issues"
   },
-  "homepage": "https://github.com/leicht-io/ui#readme",
+  "homepage": "https://github.com/leicht-io/primeval-ui#readme",
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
     "react": "^17.0.2",
