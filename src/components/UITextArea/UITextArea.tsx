@@ -8,6 +8,7 @@ export const UITextArea = React.memo((props: IProps): React.ReactElement => {
   return (
     <div className={ `input-wrap ${focus ? 'input-wrap--focused' : ''}` }>
       <label>{props.label}</label>
+
       <textarea
         tabIndex={ props.tabIndex || -1 }
         onBlur={ () => {
