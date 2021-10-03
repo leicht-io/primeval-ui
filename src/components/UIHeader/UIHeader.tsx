@@ -2,12 +2,19 @@ import React from 'react';
 import './UIHeader.scss';
 import {IProps} from './types';
 import {UICard} from '../UICard';
+import {animated, useTransition} from '@react-spring/web';
 
-export const UIHeader = React.memo((props: IProps): React.ReactElement => {
+// TODO: reactor this component
+export const UIHeader = (props: IProps): React.ReactElement => {
+  const transitions = useTransition(true, {
+    from: {opacity: props.disableAnimations ? 1 : 0},
+    enter: {opacity: 1}
+  });
+
   const getContent = () => {
     if (props.multiContent) {
-      return (
-        <div className="header--content">
+      return transitions((styles, item) => item && (
+        <animated.div className="header--content" style={ styles }>
           {props.breadcrumbs && (
             <div className="header--row">
               <p className="breadcrumbs hidden-xs">{props.breadcrumbs}</p>
@@ -15,7 +22,7 @@ export const UIHeader = React.memo((props: IProps): React.ReactElement => {
           )}
 
           <div className="header--row">
-            <h1 className={ props.title.value ? 'ui-header-title--visible' : 'ui-header-title--invisible' }>{props.title.value}</h1>
+            <h1 className={ props.title.value ? 'ui-header-title--visible' : 'ui-header-title--invisible' }>                                  {props.title.value}                                </h1>
           </div>
 
           {props.metadata && props.metadata.author && (
@@ -52,22 +59,28 @@ export const UIHeader = React.memo((props: IProps): React.ReactElement => {
               </div>
             </div>
           )}
-        </div>
+        </animated.div>
+      )
       );
     } else {
-      return (
-        <h1 className={ props.title.value ? 'ui-header-title--visible' : 'ui-header-title--invisible' }>{props.title.value}</h1>
+      return transitions((styles, item) => item &&
+                    <h1 className={ props.title.value ? 'ui-header-title--visible' : 'ui-header-title--invisible' }>
+                      <animated.div style={ styles }>{props.title.value}</animated.div>
+                    </h1>
       );
     }
-  };
+  }
+    ;
 
   const getTopGradient = () => {
     return (props.gradient && (<div className="header--bg-top-gradient" />));
-  };
+  }
+    ;
 
   const getBottomGradient = () => {
     return (props.gradient && (<div className="header--bg-bottom-gradient" />));
-  };
+  }
+    ;
 
   const getHeaderImage = () => {
     return (
@@ -75,7 +88,8 @@ export const UIHeader = React.memo((props: IProps): React.ReactElement => {
         element.currentTarget.style.setProperty('opacity', '1');
       } } />
     );
-  };
+  }
+    ;
 
   const getClasses = () => {
     let baseClasses: string = 'header header-full-width ';
@@ -96,6 +110,4 @@ export const UIHeader = React.memo((props: IProps): React.ReactElement => {
       {getHeaderImage()}
     </header>
   );
-});
-
-UIHeader.displayName = 'UIHeader';
+};

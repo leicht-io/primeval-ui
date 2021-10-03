@@ -11,6 +11,8 @@ export interface IProps {
   imageUrl?: string;
   gradient?: boolean;
 
+  disableAnimations?: boolean;
+
   breadcrumbs?: string;
 
   multiContent?: boolean;

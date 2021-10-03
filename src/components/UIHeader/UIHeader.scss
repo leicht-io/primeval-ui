@@ -45,14 +45,14 @@
   align-content: center;
 
   h1 {
-    transition: opacity 0.150s linear;
+    // transition: opacity 0.150s linear;
 
     &.ui-header-title--visible {
-      opacity: 1;
+      // opacity: 1;
     }
 
     &.ui-header-title--invisible {
-      opacity: 0;
+      // opacity: 0;
     }
 
     text-align: center;
