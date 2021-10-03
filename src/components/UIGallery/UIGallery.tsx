@@ -6,10 +6,9 @@ import 'react-glidejs/dist/index.css';
 import {IPhoto} from '../../types';
 import {UICard} from '../UICard';
 import {animated, useTransition} from '@react-spring/web';
-import {useEventListener} from '../../@core';
+import {opacity, useBodyScrollLock, useEventListener} from '../../@core';
 
 // TODO: Move this function
-// TODO: add exit animation and fading to images
 // TODO: add exit button
 const getSkeletonArray = (amount: number) => {
   const tempArray: null[] = [];
@@ -27,11 +26,9 @@ export const UIGallery = (props: IProps): React.ReactElement => {
   const [showSlider, setShowSlider] = React.useState<boolean>(false);
   const [index, setIndex] = React.useState<number>(0);
 
-  const transitions = useTransition(showSlider, {
-    from: {opacity: 0},
-    enter: {opacity: 1},
-    leave: {opacity: 0}
-  });
+  useBodyScrollLock(showSlider, [showSlider]);
+
+  const transitions = useTransition(showSlider, opacity());
 
   React.useEffect(() => {
     if (props.gallery) {
@@ -62,7 +59,7 @@ export const UIGallery = (props: IProps): React.ReactElement => {
 
   return (
     <>
-      {showSlider && (
+      {
         transitions((styles, item) => item && (
           <animated.div
             style={ styles }
@@ -98,7 +95,7 @@ export const UIGallery = (props: IProps): React.ReactElement => {
             </Glide>
           </animated.div>
         ))
-      )}
+      }
 
       <div className="ui-gallery grid-container grid-two-columns">
         {(data as any[]).map((photo: IPhoto, index: number) => {
