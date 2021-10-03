@@ -13,6 +13,12 @@ Use the package manager [npm](https://npm.com/) to install UI.
 npm install @leicht.io/primeval-ui
 ```
 
+## Running the demo application
+Execute the following command to run the demo application: 
+```bash
+npm run development
+```
+
 ## Usage
 
 For now the library consists of the following components:
