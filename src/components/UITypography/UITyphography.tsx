@@ -32,7 +32,7 @@ export const UITypography = React.memo((props: IProps): React.ReactElement => {
     case 'h6':
       return <h6 className={ classes }>{props.children}</h6>;
     case 'p':
-      return <p className={ classes }>{props.children}</p>;
+      return <p className={ classes } style={ {textAlign: props.textAlign || undefined} }>{props.children}</p>;
   }
 });
 

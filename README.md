@@ -31,6 +31,7 @@ For now the library consists of the following components:
 - Grids with Skeleton like Facebook e.g.
 - Cards
 - ReadingPositionIndicator
+- Footer
 
 
 ## Contributing

@@ -6,7 +6,7 @@ export const GridAndCards = (): React.ReactElement => {
         <>
             <UIHeader
                 size="small"
-                title={{value: "FormElements", skeleton: true}}
+                title={{value: "Grids & Cards", skeleton: true}}
                 gradient={true}/>
 
             <UIPageContainer>

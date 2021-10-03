@@ -3,4 +3,6 @@ export interface IProps {
   children?: any;
   fontWeight?: 300 | 700;
   skeleton?: boolean;
+
+  textAlign?: 'left' | 'right';
 }
