@@ -45,21 +45,11 @@
   align-content: center;
 
   h1 {
-    // transition: opacity 0.150s linear;
-
-    &.ui-header-title--visible {
-      // opacity: 1;
-    }
-
-    &.ui-header-title--invisible {
-      // opacity: 0;
-    }
-
     text-align: center;
     color: #fff;
     z-index: 9;
     font-weight: 700;
-    margin: 0;
+    margin: $base-spacing * 7 0 0;
     padding-right: $base-spacing * 3;
     padding-left: $base-spacing * 3;
     padding-bottom: 0;
@@ -214,6 +204,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: $base-spacing * 3;
+    height: $base-spacing;
   }
 }

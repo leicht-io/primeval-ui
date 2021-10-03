@@ -38,7 +38,11 @@
   }
 
   .ui-img-label-wrapper {
-    background: #fff;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(2px);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 
   .ui-img-label {
