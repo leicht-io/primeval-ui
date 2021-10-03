@@ -8,11 +8,11 @@ export const App = (): React.ReactElement => {
 
     useTimeout(() => {
         setSlides(sliderMockResponse);
-    }, 2500)
+    }, 1500)
 
     return (
         <>
-            <UISlider slides={slides} basePath={'https://ni.leicht.io/'}/>
+            <UISlider slides={slides}/>
         </>
     );
 };

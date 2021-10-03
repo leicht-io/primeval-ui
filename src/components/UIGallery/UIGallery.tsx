@@ -69,7 +69,7 @@ export const UIGallery = (props: IProps): React.ReactElement => {
             {props.gallery && props.gallery.photos && props.gallery.photos.map((photo, index) => {
               return (
                 <div key={ index } className="slider__img_wrapper">
-                  <img alt={ `Slide #${index}` } src={ props.baseUrl + photo.fullSizePath } />
+                  <img alt={ `Slide #${index}` } src={ (props.baseUrl ? props.baseUrl : '') + photo.fullSizePath } />
                 </div>
               );
             })}

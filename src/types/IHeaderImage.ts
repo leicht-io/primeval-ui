@@ -3,5 +3,5 @@ import { IFullSize } from './IFullSize';
 
 export interface IHeaderImage {
   fullSize: IFullSize;
-  thumbs: IThumbs;
+  thumbs?: IThumbs;
 }

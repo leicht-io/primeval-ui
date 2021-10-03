@@ -4,17 +4,17 @@ import {ITag} from './ITag';
 export interface ISlide {
   id: number;
   title: string;
-  content: string;
-  slug: string;
+  content?: string;
+  slug?: string;
   excerpt: string;
-  readTimeInSeconds: number;
-  headerImage: IHeaderImage;
+  readTimeInSeconds?: number;
+  headerImage: IHeaderImage | string;
   tags?: ITag | null;
-  status: string;
+  status?: string;
   category?: any;
   parentEntities?: any;
-  authorId: number;
-  createdAt: string;
-  updatedAt: string;
+  authorId?: number;
+  createdAt?: string;
+  updatedAt?: string;
   deletedAt?: string | null;
 }

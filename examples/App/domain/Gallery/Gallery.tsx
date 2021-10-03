@@ -8,7 +8,7 @@ export const Gallery = (): React.ReactElement => {
 
     useTimeout(() => {
         setGallery(galleryMockResponse);
-    }, 2500);
+    }, 1500);
 
     return (
         <>
