@@ -5,8 +5,12 @@ import Glide from 'react-glidejs';
 import 'react-glidejs/dist/index.css';
 import {IPhoto} from '../../types';
 import {UICard} from '../UICard';
+import {animated, useTransition} from '@react-spring/web';
+import {useEventListener} from '../../@core';
 
 // TODO: Move this function
+// TODO: add exit animation and fading to images
+// TODO: add exit button
 const getSkeletonArray = (amount: number) => {
   const tempArray: null[] = [];
   for (let i = 0; i < amount; i++) {
@@ -23,13 +27,11 @@ export const UIGallery = (props: IProps): React.ReactElement => {
   const [showSlider, setShowSlider] = React.useState<boolean>(false);
   const [index, setIndex] = React.useState<number>(0);
 
-  React.useEffect(() => {
-    document.addEventListener('keyup', handleEventListeners);
-
-    return () => {
-      document.removeEventListener('keyup', handleEventListeners);
-    };
-  }, []);
+  const transitions = useTransition(showSlider, {
+    from: {opacity: 0},
+    enter: {opacity: 1},
+    leave: {opacity: 0}
+  });
 
   React.useEffect(() => {
     if (props.gallery) {
@@ -44,6 +46,7 @@ export const UIGallery = (props: IProps): React.ReactElement => {
         break;
     }
   };
+  useEventListener('keyup', handleEventListeners);
 
   const getThumbnailImageUrl = (photo: IPhoto): string => {
     let url: string = (props.baseUrl ? props.baseUrl : '');
@@ -60,34 +63,41 @@ export const UIGallery = (props: IProps): React.ReactElement => {
   return (
     <>
       {showSlider && (
-        <div className="ui-gallery--glide-wrapper"
-          onClick={ () => {
-            setShowSlider(false);
-          } }>
-          <Glide
-            className={ 'ui-gallery--slideshow' }
-            ref={ gliderRef }
-            throttle={ 0 }
-            gap={ 100 }
-            type="slider"
-            peek={ {
-              before: 200,
-              after: 200,
-            } }
-            perView={ 1 }
-            autoplay={ false }
-            startAt={ index }
-            slideClassName="slider__frame">
-            {props.gallery && props.gallery.photos && props.gallery.photos.map((photo, index) => {
-              return (
-                <div key={ index } className="slider__img_wrapper">
-                  <img alt={ `Slide #${index}` }
-                    src={ (props.baseUrl ? props.baseUrl : '') + photo.fullSizePath } />
-                </div>
-              );
-            })}
-          </Glide>
-        </div>
+        transitions((styles, item) => item && (
+          <animated.div
+            style={ styles }
+            className="ui-gallery--glide-wrapper"
+            onClick={ (event) => {
+              if ((event.target as HTMLDivElement).className === 'ui-gallery--glide-wrapper') {
+                setShowSlider(false);
+                setIndex(0);
+              }
+            } }>
+            <Glide
+              className={ 'ui-gallery--slideshow' }
+              ref={ gliderRef }
+              throttle={ 0 }
+              gap={ 100 }
+              type="slider"
+              peek={ {
+                before: 200,
+                after: 200,
+              } }
+              perView={ 1 }
+              autoplay={ false }
+              startAt={ index }
+              slideClassName="slider__frame">
+              {props.gallery && props.gallery.photos && props.gallery.photos.map((photo, index) => {
+                return (
+                  <div key={ index } className="slider__img_wrapper">
+                    <img alt={ `Slide #${index}` }
+                      src={ (props.baseUrl ? props.baseUrl : '') + photo.fullSizePath } />
+                  </div>
+                );
+              })}
+            </Glide>
+          </animated.div>
+        ))
       )}
 
       <div className="ui-gallery grid-container grid-two-columns">
