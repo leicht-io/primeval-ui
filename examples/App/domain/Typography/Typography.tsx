@@ -1,5 +1,5 @@
 import * as React from "react";
-import {UIHeader, UIPageContainer, UITypography} from "../../../../src";
+import {UIHeader, UITypography} from "../../../../src";
 import {useTimeout} from "../../../../src/@core";
 
 export const Typography = (): React.ReactElement => {
@@ -17,16 +17,14 @@ export const Typography = (): React.ReactElement => {
                 gradient={true}
                 title={{value: "Typography", skeleton: true}}/>
 
-            <UIPageContainer>
-                <UITypography type={'h1'}>Heading 1</UITypography>
-                <UITypography type={'h2'}>Heading 2</UITypography>
-                <UITypography type={'h3'}>Heading 3</UITypography>
-                <UITypography type={'h4'}>Heading 4</UITypography>
-                <UITypography type={'h5'}>Heading 5</UITypography>
-                <UITypography type={'h6'}>Heading 6</UITypography>
-                <UITypography type={'p'} skeleton={!text}>{text}</UITypography>
-                <UITypography type={'p'}>Lorem upsim with an <a href="#">anchor</a>.</UITypography>
-            </UIPageContainer>
+            <UITypography type={'h1'}>Heading 1</UITypography>
+            <UITypography type={'h2'}>Heading 2</UITypography>
+            <UITypography type={'h3'}>Heading 3</UITypography>
+            <UITypography type={'h4'}>Heading 4</UITypography>
+            <UITypography type={'h5'}>Heading 5</UITypography>
+            <UITypography type={'h6'}>Heading 6</UITypography>
+            <UITypography type={'p'} skeleton={!text}>{text}</UITypography>
+            <UITypography type={'p'}>Lorem upsim with an <a href="#">anchor</a>.</UITypography>
         </>
     );
 }

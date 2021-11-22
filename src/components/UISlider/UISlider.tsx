@@ -30,7 +30,7 @@ export const UISlider = (props: IProps): React.ReactElement => {
   const getSlideImageUrl = (slide: ISlide): string => {
     let url: string = (props.basePath ? props.basePath : '');
 
-    if(typeof slide.headerImage === 'string') {
+    if (typeof slide.headerImage === 'string') {
       url += slide.headerImage;
     } else {
       url += slide.headerImage.fullSize.path;
@@ -41,13 +41,13 @@ export const UISlider = (props: IProps): React.ReactElement => {
 
   if (!props.slides) {
     return (
-      <div className="glide">
+      <div className={ 'glide' + (props.inCard ? ' glide--in-card' : '') }>
         <UILoader size="small" color="light" />
       </div>
     );
   } else {
     return (
-      <div className="glide">
+      <div className={ 'glide' + (props.inCard ? ' glide--in-card' : '') }>
         <div className="glide__track" data-glide-el="track">
           <ul className="glide__slides">
             {props.slides.map((slide, index) => {

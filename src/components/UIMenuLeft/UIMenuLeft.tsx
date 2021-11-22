@@ -5,8 +5,6 @@ import {IMenuItem} from '../../types';
 import {UIScrollProgress} from '../UIScrollProgress';
 import {IoChevronDown} from '@react-icons/all-files/io5/IoChevronDown';
 import {IoChevronUp} from '@react-icons/all-files/io5/IoChevronUp';
-import {IoChevronBack} from '@react-icons/all-files/io5/IoChevronBack';
-import {IoArrowBackOutline} from '@react-icons/all-files/io5/IoArrowBackOutline';
 
 export const UIMenuLeft = (props: IProps): React.ReactElement => {
   const [menuItems, setMenuItems] = React.useState<IMenuItem[]>([]);

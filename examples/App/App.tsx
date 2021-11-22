@@ -10,9 +10,5 @@ export const App = (): React.ReactElement => {
         setSlides(sliderMockResponse);
     }, 1500)
 
-    return (
-        <>
-            <UISlider slides={slides}/>
-        </>
-    );
+    return <UISlider slides={slides} inCard={true}/>;
 };

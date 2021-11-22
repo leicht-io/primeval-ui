@@ -19,19 +19,16 @@ export const Root = (props: { children: any }): React.ReactElement => {
 
     return (
         <>
+            <UIMenuLeft
+                onNavigate={(destination: IMenuItem) => {
+                    history.push(destination.link as any);
+                }}
+                logo={logo}
+                footer={<UIFooter socialIcons={socialIcons}/>}
+                menuItems={Menu}/>
 
-            <div style={{display: "flex", marginLeft: "370px"}}>
-                <UIMenuLeft
-                    onNavigate={(destination: IMenuItem) => {
-                        history.push(destination.link as any);
-                    }}
-                    logo={logo}
-                    footer={<UIFooter socialIcons={socialIcons}/>}
-                    menuItems={Menu}/>
-
-                <div style={{width: "calc(100vw - 394px)"}}>
-                    {props.children}
-                </div>
+            <div className="root--wrapper">
+                {props.children}
             </div>
         </>
     );

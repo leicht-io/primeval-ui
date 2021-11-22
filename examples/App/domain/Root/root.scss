@@ -1,3 +1,14 @@
 #root {
   overflow: hidden;
 }
+
+$padding: 24px;
+
+.root--wrapper {
+  width: calc(100vw - 350px - #{$padding} * 2);
+  margin-left: 350px;
+  max-width: 1170px;
+
+  padding: $padding;
+  overflow-x: hidden;
+}

@@ -1,31 +1,6 @@
 @import "../../@core/styles/@theme.scss";
 
 .ui-page-container {
-  &:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
-  }
-
-  flex-grow: 1;
-
-  width: calc(100% - 32px);
-
-  margin: 16px;
-  margin-top:108px;
-
-  overflow: visible;
-
-  .ui-icons.ui-icons a {
-    background: none;
-  }
-
-  &.fullwidth {
-    max-width: 100%;
-  }
 
   a:not(.btn), code {
     cursor: pointer;
