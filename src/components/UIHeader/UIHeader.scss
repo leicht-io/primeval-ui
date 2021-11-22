@@ -1,97 +1,26 @@
 @import "../../@core/styles/@theme.scss";
 
 .header {
-  overflow: hidden;
-
-  img.ui-header-img {
-    opacity: 0;
-
-    z-index: -9;
-    position: absolute;
-    transition: opacity 0.25s linear;
-    will-change: opacity;
-    width: 100%;
-    object-position: 50% 50%;
-    object-fit: cover;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-
-  &.ui-header--large {
-    height: 500px;
-  }
-
-  &.ui-header--small {
-    height: 300px;
-  }
-
-  width: 1070px;
-  margin: 0 auto;
-
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  position: relative;
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  width: 100%;
+  position: fixed;
+  background: white;
+  z-index: 999999;
+  margin-left: -20px;
+  padding-left: 36px;
+  height: 86px;
+  border-left: 2px solid #eeeeee;
+  box-shadow: 0px 14px 29px 1px rgb(0 0 0 / 5%);
 
   h1 {
-    text-align: center;
-    color: #fff;
+    color: #505050;
+    text-shadow: 0px 0px 19px rgb(80 80 80 / 10%);
     z-index: 9;
     font-weight: 700;
-    margin: $base-spacing * 7 0 0;
-    padding-right: $base-spacing * 3;
-    padding-left: $base-spacing * 3;
-    padding-bottom: 0;
+    margin: 0;
+    line-height: 86px;
 
-    line-height: 50px;
-    font-size: 42px;
+    font-size: 24px;
     letter-spacing: -0.022em;
-
-    @include sm() {
-      padding-top: 0;
-    }
-
-    @media (min-width: 728px) {
-      font-size: 36px;
-    }
-
-    @media (min-width: 552px) and (max-width: 727.98px) {
-      font-size: 32px;
-    }
-  }
-
-  &.header-full-width {
-    width: 100%;
-  }
-
-  &:before {
-    background: rgba(0, 0, 0, 0.4);
-    content: " ";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-  }
-
-  .header--bg-top-gradient {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #a6ffcb 94%);
   }
 
   p.breadcrumbs {
@@ -122,88 +51,4 @@
     }
   }
 
-  .header--content {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: start;
-    align-content: center;
-    width: 100%;
-
-    @include lg() {
-      width: $base-content-width;
-    }
-
-    @include xl() {
-      width: $extended-content-width;
-    }
-  }
-
-  .header--row {
-    padding: 0 $base-spacing * 3;
-
-    @include lg() {
-      padding: 0;
-    }
-
-    h1 {
-      padding: 0;
-      text-align: left;
-      overflow: hidden;
-      line-height: 42px;
-
-      @include sm() {
-        padding-top: 0;
-      }
-    }
-
-    .blog-metadata-light {
-      color: #eee;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 1.35;
-      margin: 0;
-    }
-
-    .blog-metadata-dark {
-      font-weight: 500;
-      color: #fff;
-      margin: 0;
-      font-size: 16px;
-    }
-
-    .blog-metadata {
-      margin-right: 0;
-      width: 50%;
-      float: left;
-      margin-bottom: 20px;
-
-      @include md() {
-        margin-right: 40px;
-        width: auto;
-        display: block;
-        margin-bottom: 0;
-      }
-
-      &.author-image {
-        display: none;
-
-        @include md() {
-          display: block;
-        }
-      }
-    }
-  }
-
-  .header--bg-bottom-gradient {
-    background-image: -webkit-gradient(linear, left top, right top, from(#0089ff), to(#1bda93));
-    background-image: linear-gradient(to right, #0089ff, #1bda93);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: $base-spacing;
-  }
 }

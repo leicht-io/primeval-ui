@@ -88,11 +88,11 @@ export const UIHeader = (props: IProps): React.ReactElement => {
   };
 
   const getClasses = () => {
-    let baseClasses: string = 'header header-full-width ';
+    const baseClasses: string = 'header '; // header-full-width
     if (props.size) {
-      baseClasses += 'ui-header--' + props.size;
+    //  baseClasses += 'ui-header--' + props.size;
     } else {
-      baseClasses += 'ui-header--large';
+      // baseClasses += 'ui-header--large';
     }
 
     return baseClasses;
@@ -100,10 +100,7 @@ export const UIHeader = (props: IProps): React.ReactElement => {
 
   return (
     <header className={ getClasses() }>
-      {getTopGradient()}
       {getContent()}
-      {getBottomGradient()}
-      {getHeaderImage()}
     </header>
   );
 };

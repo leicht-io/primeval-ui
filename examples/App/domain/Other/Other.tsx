@@ -22,36 +22,22 @@ export const Other = (): React.ReactElement => {
     const [imageSource, setImageSource] = React.useState<string | null>(null);
 
     useTimeout(() => {
-        setImageSource('https://ni.leicht.io/wadden_sea.0039e6c00cf93aed50f037fcfbdfa31f5517546e_original.jpg');
+        setImageSource('https://picsum.photos/1920/1080');
     }, 2500);
 
     return (
         <>
-            <UIHeader
-                gradient={true}
-                title={{value: 'Other Components'}}
-                multiContent={true}
-                breadcrumbs={'Home / Blog /'}
-                metadata={{
-                    author: {
-                        name: 'Christian Leicht',
-                        image: 'https://picsum.photos/200',
-                        published: 'May 15, 2019',
-                        updated: 'May 5, 2020',
-                        length: '5 minutes read'
-                    }
-                }}/>
+            <UIHeader title={{value: 'Other Components'}}/>
 
             <UIPageContainer>
+
                 <UITypography type={'h3'}>Dividers</UITypography>
 
                 <UIDivider size={'large'} showBorder={true}/>
                 <UIDivider size={'medium'} showBorder={true}/>
                 <UIDivider size={'small'} showBorder={true}/>
                 <UIDivider size={'medium'} showBorder={false}/>
-            </UIPageContainer>
 
-            <UIPageContainer>
                 <UITypography type={'h3'}>Modals</UITypography>
 
                 <UIButton type={'primary'} onClick={() => {
@@ -60,19 +46,15 @@ export const Other = (): React.ReactElement => {
                 <UIButton type={'primary'} onClick={() => {
                     setShowModal2(true);
                 }}>Show Modal with HTML</UIButton>
-            </UIPageContainer>
 
-            <UIDivider size={'large'}/>
+                <UIDivider size={'large'}/>
 
-            <UIPageContainer>
                 <UITypography type={'h3'}>Images</UITypography>
                 <UICard
                     skeletonHeight={658}
                     title='This is the label'
                     backgroundUrl={imageSource}/>
-            </UIPageContainer>
 
-            <UIPageContainer>
                 <UITypography type={'h3'}>Notifications</UITypography>
 
                 {notifications.map((notification, index) => {
@@ -97,26 +79,25 @@ export const Other = (): React.ReactElement => {
                           }}>
                     Add Notification
                 </UIButton>
+
+                <UIModal
+                    type={'IFRAME'}
+                    title={'Modal Title'}
+                    show={showModal1}
+                    onHide={() => {
+                        setShowModal1(false);
+                    }}
+                    iframeUrl={'https://en.wikipedia.org/wiki/Ardbeg_distillery'}/>
+
+                <UIModal
+                    title={'Modal Title'}
+                    show={showModal2}
+                    onHide={() => {
+                        setShowModal2(false);
+                    }}>
+                    <UITypography type="p">With HTML content</UITypography>
+                </UIModal>
             </UIPageContainer>
-
-            <UIModal
-                type={'IFRAME'}
-                title={'Modal Title'}
-                show={showModal1}
-                onHide={() => {
-                    setShowModal1(false);
-                }}
-                iframeUrl={'https://en.wikipedia.org/wiki/Ardbeg_distillery'}/>
-
-            <UIModal
-                title={'Modal Title'}
-                show={showModal2}
-                onHide={() => {
-                    setShowModal2(false);
-                }}>
-                <UITypography type="p">With HTML content</UITypography>
-            </UIModal>
-
         </>
     );
 }

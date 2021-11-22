@@ -3,13 +3,12 @@ import {UIGrid, UIHeader, UIIcon, UIPageContainer} from "../../../../src";
 
 export const Icons = (): React.ReactElement => {
     return (
-        <>
+        <UIPageContainer>
             <UIHeader
                 size="small"
                 gradient={true}
                 title={{value: "Icons", skeleton: true}}/>
 
-            <UIPageContainer>
                 <UIGrid columns={'four'}>
                     <UIIcon icon={'github'} size={'lg'}/>
                     <UIIcon icon={'instagram'} size={'lg'}/>
@@ -28,7 +27,6 @@ export const Icons = (): React.ReactElement => {
                     <UIIcon icon={'magnify'} size={'lg'}/>
                     <UIIcon icon={'download'} size={'lg'}/>
                 </UIGrid>
-            </UIPageContainer>
-        </>
+        </UIPageContainer>
     );
 }

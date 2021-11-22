@@ -7,10 +7,10 @@ export interface SocialIcon {
 }
 
 export interface IProps {
-  left: {
+  left?: {
     text: string;
   };
-  right: {
+  right?: {
     text: string;
     link: string;
   };

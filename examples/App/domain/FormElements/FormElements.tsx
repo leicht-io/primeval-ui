@@ -3,21 +3,19 @@ import {UIButton, UIGrid, UIHeader, UIInput, UIPageContainer, UITextArea, UITypo
 
 export const FormElements = (): React.ReactElement => {
     return (
-        <>
+        <UIPageContainer>
             <UIHeader
                 size={"small"}
                 gradient={true}
                 breadcrumbs={"Home / Form Elements"}
                 title={{value: "Form Elements", skeleton: true}} />
 
-            <UIPageContainer>
                 <UITypography type="h3">Buttons</UITypography>
 
                 <UIButton text="Primary Button" type="primary"/>
                 <UIButton text="Danger Button" type="danger"/>
                 <UIButton text="Success Button" type="success"/>
                 <UIButton text="Disabled Button" type="success" disabled={true}/>
-            </UIPageContainer>
 
             <UIPageContainer>
                 <UITypography type={'h3'}>Inputs</UITypography>
@@ -49,6 +47,6 @@ export const FormElements = (): React.ReactElement => {
 
                 <UIButton text="Primary Button" type="primary" disabled={true}/>
             </UIPageContainer>
-        </>
+        </UIPageContainer>
     );
 }

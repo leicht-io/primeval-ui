@@ -1,6 +1,6 @@
 export * from './UIModal';
 export * from './UIGallery';
-export * from './UIMenu';
+export * from './UIMenuLeft';
 export * from './UITags';
 export * from './UIPageContainer';
 export * from './UIScrollProgress';

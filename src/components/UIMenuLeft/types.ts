@@ -5,4 +5,6 @@ export interface IProps {
   logo: any;
 
   onNavigate: (destination: IMenuItem) => void;
+
+  footer?: any;
 }

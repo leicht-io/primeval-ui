@@ -16,7 +16,11 @@ export const Menu: IMenuItem[] = [
         link: '/icons'
     }, {
         title: 'Gallery',
-        link: '/gallery'
+        link: '/gallery',
+        menuItems: [{
+            title: "Sub Item",
+            link: '/icons'
+        }]
     }, {
         title: 'Grids & Cards',
         link: '/grid-and-cards'

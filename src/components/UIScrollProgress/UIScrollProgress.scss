@@ -1,7 +1,7 @@
 @import "../../@core/styles/@theme.scss";
 
 .ui-scroll-progress {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
 
@@ -30,5 +30,6 @@
 
   &::-moz-progress-bar {
     background-color: $teal;
+
   }
 }
