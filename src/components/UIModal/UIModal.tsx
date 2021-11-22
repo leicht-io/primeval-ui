@@ -1,9 +1,9 @@
 import React from 'react';
 import {IProps} from './types';
 import './UIModal.scss';
-import {UIIcon} from '../UIIcon';
 import {opacity, useBodyScrollLock, useEventListener} from '../../@core';
 import {animated, useTransition} from '@react-spring/web';
+import {IoCloseCircle} from '@react-icons/all-files/io5/IoCloseCircle';
 
 // TODO: add loader to iframe content.
 export const UIModal = (props: IProps): React.ReactElement => {
@@ -43,7 +43,7 @@ export const UIModal = (props: IProps): React.ReactElement => {
                 props.onHide();
               }
             } }>
-              <UIIcon icon={ 'close' } />
+              <IoCloseCircle />
             </div>
           </div>
         </div>

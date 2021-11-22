@@ -6,7 +6,6 @@ export * from './UIPageContainer';
 export * from './UIScrollProgress';
 export * from './UIDivider';
 export * from './UIHeader';
-export * from './UIIcon';
 export * from './UISlider';
 export * from './UIInput';
 export * from './UICard';

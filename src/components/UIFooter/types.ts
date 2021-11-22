@@ -1,9 +1,7 @@
-import {IProps as IUIIconProps} from '../UIIcon/types';
-
 export interface SocialIcon {
   link: string;
   text?: string;
-  icon: IUIIconProps['icon'];
+  icon: React.ReactElement;
 }
 
 export interface IProps {

@@ -12,6 +12,7 @@ export const Typography = (): React.ReactElement => {
     return (
         <>
             <UIHeader
+                breadcrumbs={"Home / Form Elements"}
                 size="small"
                 gradient={true}
                 title={{value: "Typography", skeleton: true}}/>

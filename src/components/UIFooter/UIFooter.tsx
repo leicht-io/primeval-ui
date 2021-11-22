@@ -3,7 +3,6 @@ import './ui-footer.scss';
 import {UIGrid} from '../UIGrid';
 import {UITypography} from '../UITypography';
 import {UIDivider} from '../UIDivider';
-import {UIIcon} from '../UIIcon';
 import {IProps, SocialIcon} from './types';
 
 export const UIFooter = (props: IProps): React.ReactElement => {
@@ -16,7 +15,7 @@ export const UIFooter = (props: IProps): React.ReactElement => {
           return (
             <a target="_blank" href={ socialIcon.link } key={ index } rel="noreferrer"
               className='social-icon'>
-              <UIIcon icon={ socialIcon.icon } />
+              {socialIcon.icon}
               <UITypography type="p">{socialIcon.text}</UITypography>
             </a>
           );

@@ -1,20 +1,14 @@
 import React from 'react';
 import {IProps} from './types';
 import './UICardToolbar.scss';
-import {UIIcon} from '../../UIIcon';
 
 export const UICardToolbar = (props: IProps): React.ReactElement => {
   return (
     <div className= 'ui-card-toolbar'>
       <div className="ui-icons">
-        {props.icons && props.icons.map((icon, index) => {
-          return (
-            <UIIcon
-              icon={ icon.id }
-              key={ index }
-              onClick={ icon.onClick } />
-          );
-        })}
+        {/* props.icons && props.icons.map((icon, index) => {
+          return icon;
+        }) */}
       </div>
     </div>
   );
