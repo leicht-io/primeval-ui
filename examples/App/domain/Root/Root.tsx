@@ -1,5 +1,5 @@
 import * as React from "react";
-import {IMenuItem, UIFooter, UIMenuLeft} from "../../../../src";
+import {IMenuItem, UIFooter, UIMenuLeft, UIPageContainer} from "../../../../src";
 import {logo} from "../../../assets/logo";
 import {Menu} from "../../../assets/menu";
 import {useHistory} from "react-router-dom";
@@ -19,15 +19,15 @@ export const Root = (props: { children: any }): React.ReactElement => {
 
     return (
         <>
-            <UIMenuLeft
-                onNavigate={(destination: IMenuItem) => {
-                    history.push(destination.link as any);
-                }}
-                logo={logo}
-                footer={<UIFooter socialIcons={socialIcons}/>}
-                menuItems={Menu}/>
-
             <div className="root--wrapper">
+                <UIMenuLeft
+                    onNavigate={(destination: IMenuItem) => {
+                        history.push(destination.link as any);
+                    }}
+                    logo={logo}
+                    footer={<UIFooter socialIcons={socialIcons}/>}
+                    menuItems={Menu}/>
+
                 {props.children}
             </div>
         </>
