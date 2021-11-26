@@ -29,34 +29,30 @@ export const Other = (): React.ReactElement => {
         <>
             <UIHeader title={{value: 'Other Components'}}/>
 
-            <UIPageContainer>
-
-                <UITypography type={'h3'}>Dividers</UITypography>
-
+            <UIPageContainer title="Dividers">
                 <UIDivider size={'large'} showBorder={true}/>
                 <UIDivider size={'medium'} showBorder={true}/>
                 <UIDivider size={'small'} showBorder={true}/>
                 <UIDivider size={'medium'} showBorder={false}/>
+            </UIPageContainer>
 
-                <UITypography type={'h3'}>Modals</UITypography>
-
+            <UIPageContainer title="Modals">
                 <UIButton type={'primary'} onClick={() => {
                     setShowModal1(true);
                 }}>Show Modal with IFRAME</UIButton>
                 <UIButton type={'primary'} onClick={() => {
                     setShowModal2(true);
                 }}>Show Modal with HTML</UIButton>
+            </UIPageContainer>
 
-                <UIDivider size={'large'}/>
-
-                <UITypography type={'h3'}>Images</UITypography>
+            <UIPageContainer title="Images">
                 <UICard
                     skeletonHeight={658}
                     title='This is the label'
                     backgroundUrl={imageSource}/>
+            </UIPageContainer>
 
-                <UITypography type={'h3'}>Notifications</UITypography>
-
+            <UIPageContainer title="Notifications">
                 {notifications.map((notification, index) => {
                     return (
                         <UINotification

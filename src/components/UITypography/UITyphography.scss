@@ -47,7 +47,7 @@
   }
 
   &.ui-typography--fw700 {
-    font-weight: 700;
+    font-weight: 500;
   }
 }
 
@@ -58,11 +58,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, strong, i, b, u, pre, li {
-  @media (min-width: 728px) {
-    font-size: 18px;
-  }
-
-  font-size: 18px;
   letter-spacing: -0.004em;
   line-height: 1.58;
   margin-top: 0.42em;
@@ -104,7 +99,7 @@ h2 {
   margin-bottom: 0.28em;
   letter-spacing: -0.022em;
   line-height: 1.12;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h3 {
@@ -118,7 +113,7 @@ h3 {
     font-size: 24px;
   }
 
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 0.31em;
   line-height: 1.18;
   letter-spacing: -0.022em;

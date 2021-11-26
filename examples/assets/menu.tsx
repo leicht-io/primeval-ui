@@ -13,7 +13,6 @@ export const Menu: IMenuItem[] = [
     {
         title: 'Home',
         link: '/',
-        active: true,
         icon: <IoHomeOutline/>
     }, {
         title: 'Typography',

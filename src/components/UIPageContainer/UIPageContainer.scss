@@ -7,7 +7,26 @@
   border-radius: 8px;
   padding: 16px 32px;
 
-  min-height: calc(100vh - 180px);
+  &:not(:first-child) {
+    margin-top: 24px;
+  }
+
+  &--viewport-height {
+    height: calc(100vh - 180px)
+  }
+
+  &--title {
+    > h2 {
+      border-bottom: 1px solid #eee;
+      font-size: 18px;
+      padding-bottom: 8px;
+      margin: 0 0 18px -32px;
+      width: calc(100% + 64px);
+      padding-left: 32px;
+    }
+  }
+
+  // min-height: calc(100vh - 180px);
 
   a:not(.btn), code {
     cursor: pointer;
@@ -18,9 +37,13 @@
     border-radius: .3rem;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    font-weight: 700;
+    font-weight: 500;
     text-decoration: none;
     background: -webkit-gradient(linear, left top, right top, from(#fce4ee), to(#cce7ff));
     background: linear-gradient(to right, #fce4ee, #cce7ff);
+  }
+
+  > h1, > h2, > h3, > h4, > h5, > h6 {
+    margin-top: 0;
   }
 }

@@ -9,44 +9,41 @@ export const FormElements = (): React.ReactElement => {
                 gradient={true}
                 breadcrumbs={"Home / Form Elements"}
                 title={{value: "Form Elements", skeleton: true}}/>
-            <UIPageContainer>
-                <UITypography type="h3">Buttons</UITypography>
 
+            <UIPageContainer title="Buttons">
                 <UIButton text="Primary Button" type="primary"/>
                 <UIButton text="Danger Button" type="danger"/>
                 <UIButton text="Success Button" type="success"/>
                 <UIButton text="Disabled Button" type="success" disabled={true}/>
+            </UIPageContainer>
 
-                <UIPageContainer>
-                    <UITypography type={'h3'}>Inputs</UITypography>
-
-                    <UIGrid columns={"two"}>
-                        <UIInput
-                            tabIndex={1}
-                            label={'Input Label'}
-                            onChange={(value: string) => {
-                                // eslint-disable-next-line no-console
-                                console.log('Value:', value);
-                            }}/>
-                        <UIInput
-                            tabIndex={2}
-                            label={'Input Label'}
-                            onChange={(value: string) => {
-                                // eslint-disable-next-line no-console
-                                console.log('Value:', value);
-                            }}/>
-                    </UIGrid>
-
-                    <UITextArea
-                        tabIndex={3}
+            <UIPageContainer title="Inputs">
+                <UIGrid columns={"two"}>
+                    <UIInput
+                        tabIndex={1}
                         label={'Input Label'}
                         onChange={(value: string) => {
                             // eslint-disable-next-line no-console
                             console.log('Value:', value);
                         }}/>
+                    <UIInput
+                        tabIndex={2}
+                        label={'Input Label'}
+                        onChange={(value: string) => {
+                            // eslint-disable-next-line no-console
+                            console.log('Value:', value);
+                        }}/>
+                </UIGrid>
 
-                    <UIButton text="Primary Button" type="primary" disabled={true}/>
-                </UIPageContainer>
+                <UITextArea
+                    tabIndex={3}
+                    label={'Input Label'}
+                    onChange={(value: string) => {
+                        // eslint-disable-next-line no-console
+                        console.log('Value:', value);
+                    }}/>
+
+                <UIButton text="Primary Button" type="primary" disabled={true}/>
             </UIPageContainer>
         </>
     );

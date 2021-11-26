@@ -11,11 +11,21 @@
 @import "atomics";
 
 @mixin fontFamily() {
-  font-family: Poppins,Helvetica,"sans-serif";
+  font-family: Poppins, Helvetica, "sans-serif";
 }
 
 body {
   @include fontFamily();
+
+  background-image: url("https://preview.keenthemes.com/metronic8/demo2/assets/media/patterns/header-bg.jpg");
+  background-color: #f5f8fa;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 250px;
+  font-family: 'Poppins', Helvetica, sans-serif;
+
+  font-size: 13px;
+  font-weight: 400;
 
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -25,8 +35,6 @@ body {
   margin: 0 !important;
   padding: 0 !important;
   overflow-y: scroll;
-
-  font-size: 18px;
 
   &.body--disable-scroll {
     overflow: hidden;

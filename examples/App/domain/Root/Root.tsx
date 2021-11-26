@@ -1,5 +1,5 @@
 import * as React from "react";
-import {IMenuItem, UIFooter, UIMenuLeft, UIPageContainer} from "../../../../src";
+import {IMenuItem, UIFooter, UIMenuLeft} from "../../../../src";
 import {logo} from "../../../assets/logo";
 import {Menu} from "../../../assets/menu";
 import {useHistory} from "react-router-dom";
