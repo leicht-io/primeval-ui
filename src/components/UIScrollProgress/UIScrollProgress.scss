@@ -22,13 +22,17 @@
 
   &::-webkit-progress-bar {
     background-color: transparent;
+    border-radius: 20px;
   }
 
   &::-webkit-progress-value {
     background-color: $teal;
+    border-radius: 20px;
+
   }
 
   &::-moz-progress-bar {
+    border-radius: 20px;
     background-color: $teal;
 
   }

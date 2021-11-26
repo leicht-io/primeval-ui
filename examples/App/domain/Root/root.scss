@@ -32,8 +32,10 @@ $padding: 24px;
 
 .root--wrapper {
   width: calc(100vw - 350px - #{$padding} * 2);
-  margin-left: 350px;
+  margin-left: 330px;
   max-width: 1170px;
 
-  padding: 30px $padding $padding;
+  position: relative;
+
+  padding: 30px $padding;
 }

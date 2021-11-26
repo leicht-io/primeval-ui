@@ -5,7 +5,9 @@
   background: #fff;
   box-shadow: 0 0 20px 0 rgb(76 87 125 / 2%);
   border-radius: 8px;
-  padding: 16px;
+  padding: 16px 32px;
+
+  min-height: calc(100vh - 180px);
 
   a:not(.btn), code {
     cursor: pointer;

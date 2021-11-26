@@ -103,7 +103,6 @@ export const UIHeader = (props: IProps): React.ReactElement => {
       <header className={ getClasses() }>
         {getContent()}
       </header>
-      <div className={ 'ui-header--clearer' } />
     </>
   );
 };

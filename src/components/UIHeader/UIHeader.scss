@@ -1,32 +1,26 @@
 @import "../../@core/styles/@theme.scss";
 
-.ui-header--clearer {
-  height: calc(86px + 24px);
-  margin-top: -24px;
-  margin-left: -24px;
-  width: calc(100% + 48px);
-}
-
 .header {
   border-radius: 16px;
 
-  width: 100%;
-  position: fixed;
+  width: auto;
+  position: relative;
   background: white;
   z-index: 999999;
   padding-left: 36px;
-  height: 86px;
+  height: 64px;
   box-shadow: 18px 0px 10px rgb(120 130 140 / 13%);
 
+  margin-bottom: 24px;
+
   h1 {
-    color: #505050;
+    font-size: 18px;
     text-shadow: 0px 0px 19px rgb(80 80 80 / 10%);
     z-index: 9;
-    font-weight: 700;
+    font-weight: 500;
     margin: 0;
-    line-height: 86px;
+    line-height: 64px;
 
-    font-size: 24px;
     letter-spacing: -0.022em;
   }
 
