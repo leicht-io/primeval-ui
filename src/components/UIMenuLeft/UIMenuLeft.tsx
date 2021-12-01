@@ -126,7 +126,7 @@ export const UIMenuLeft = (props: IProps): React.ReactElement => {
           <a onClick={ (event) => {
             handleClick(event, {title: 'Home', link: '/'});
           } }>
-            {props.logo}
+            {props.collapsed ? props.collapsedLogo : props.logo}
           </a>
         </div>
 
@@ -136,7 +136,7 @@ export const UIMenuLeft = (props: IProps): React.ReactElement => {
           })}
         </nav>
 
-        {props.footer && (
+        {props.footer && !props.collapsed && (
           <div className={ 'ui-navigation--footer' }>
             {props.footer}
           </div>

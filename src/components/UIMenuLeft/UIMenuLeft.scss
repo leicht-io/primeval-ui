@@ -3,6 +3,7 @@
 @import "../../@core/styles/@theme.scss";
 
 .ui-navigation {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -10,22 +11,32 @@
   align-items: stretch;
   align-content: stretch;
   position: fixed;
-  height: calc(100vh - 60px);
-  width: 300px;
+  height: 60px;
+  width: 100vw;
   z-index: 999;
-  left: 30px;
+  left: 0;
   transition: all 0.25s linear;
-  background: #fff;
-  top: 30px;
-  bottom: 30px;
-  border-radius: $border-radius;
+  top: 0;
+  border-radius: 0;
+  box-shadow: 0 0 20px 0 rgb(76 87 125 / 2%);
+
+  @include sm() {
+    overflow: auto;
+    background: #fff;
+    height: calc(100vh - 60px);
+    width: 300px;
+    left: 30px;
+    top: 30px;
+    bottom: 30px;
+    border-radius: $border-radius;
+  }
 
   &--collapsed {
     width: 50px;
     overflow: hidden;
 
     .ui-navigation--item {
-      padding:0;
+      padding: 0;
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;

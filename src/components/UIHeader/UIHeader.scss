@@ -6,10 +6,14 @@
   width: auto;
   position: relative;
   background: white;
-  z-index: 999999;
   padding-left: 36px;
   padding-right: 36px;
   height: 64px;
+  margin-top: 56px;
+
+  @include sm() {
+  margin-top:0;
+  }
 
   @include boxShadow();
 

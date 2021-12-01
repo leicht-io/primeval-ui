@@ -2,7 +2,8 @@ import {IMenuItem} from '../../types';
 
 export interface IProps {
   menuItems: IMenuItem[];
-  logo: any;
+  logo: React.ReactElement;
+  collapsedLogo?: React.ReactElement;
 
   onNavigate: (destination: IMenuItem) => void;
 
