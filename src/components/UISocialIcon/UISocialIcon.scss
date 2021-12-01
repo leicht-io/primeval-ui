@@ -1,0 +1,21 @@
+@import "../../@core/styles/@theme.scss";
+
+.ui-social-icon {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  text-decoration: none;
+
+  p, a {
+    margin-top: 0;
+    font-size: $font-size-small;
+    color: $anchors;
+  }
+
+  svg {
+    fill: $anchors;
+  }
+}

@@ -1,16 +1,5 @@
-export interface SocialIcon {
-  link: string;
-  text?: string;
-  icon: React.ReactElement;
-}
+import {ISocialIcon} from '../../@models/ISocialIcon';
 
 export interface IProps {
-  left?: {
-    text: string;
-  };
-  right?: {
-    text: string;
-    link: string;
-  };
-  socialIcons?: SocialIcon[];
+  socialIcons?: ISocialIcon[];
 }

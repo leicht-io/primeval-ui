@@ -14,12 +14,40 @@
   width: 300px;
   z-index: 999;
   left: 30px;
-  box-shadow: 0 0 20px 0 rgb(76 87 125 / 2%);
   transition: all 0.25s linear;
   background: #fff;
   top: 30px;
   bottom: 30px;
-  border-radius: 16px;
+  border-radius: $border-radius;
+
+  &--collapsed {
+    width: 50px;
+    overflow: hidden;
+
+    .ui-navigation--item {
+      padding:0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      align-content: stretch;
+
+      &-with-icon svg:first-child {
+        margin-right: 0;
+      }
+    }
+
+    .ui-navigation--item-text {
+      display: none;
+    }
+
+    .ui-navigation--content {
+      padding: 4px;
+    }
+  }
+
+  @include boxShadow();
 
   &--content {
     padding: 24px;
@@ -126,7 +154,7 @@
     }
 
     &--active, &:hover {
-      box-shadow: 0 4px 29px 1px rgb(0 0 0 / 5%);
+      @include boxShadow();
     }
   }
 }

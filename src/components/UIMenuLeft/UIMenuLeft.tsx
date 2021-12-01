@@ -118,7 +118,7 @@ export const UIMenuLeft = (props: IProps): React.ReactElement => {
   };
 
   return (
-    <div className={ 'ui-navigation' }>
+    <div className={ 'ui-navigation ' + (props.collapsed ? 'ui-navigation--collapsed' : undefined) }>
       <UIScrollProgress />
 
       <div className="ui-navigation--content">

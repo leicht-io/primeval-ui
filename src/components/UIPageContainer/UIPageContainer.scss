@@ -3,9 +3,10 @@
 .ui-page-container {
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 0 20px 0 rgb(76 87 125 / 2%);
-  border-radius: 8px;
+  border-radius: $border-radius;
   padding: 16px 32px;
+
+  @include boxShadow();
 
   &:not(:first-child) {
     margin-top: 24px;

@@ -7,10 +7,7 @@ import {IoLogoFacebook} from "@react-icons/all-files/io5/IoLogoFacebook";
 export const GridAndCards = (): React.ReactElement => {
     return (
         <>
-            <UIHeader
-                size="small"
-                title={{value: "Grids & Cards", skeleton: true}}
-                gradient={true}/>
+            <UIHeader title="Grids & Cards"/>
 
             <UIPageContainer>
                 <UIGrid columns={'four'}>

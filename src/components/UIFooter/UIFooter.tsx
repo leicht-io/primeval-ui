@@ -1,37 +1,35 @@
 import React from 'react';
 import './ui-footer.scss';
-import {UIGrid} from '../UIGrid';
-import {UITypography} from '../UITypography';
 import {UIDivider} from '../UIDivider';
-import {IProps, SocialIcon} from './types';
+import {IProps} from './types';
+import {UISocialIcon} from '../UISocialIcon';
+import {ISocialIcon} from '../../@models/ISocialIcon';
 
 export const UIFooter = (props: IProps): React.ReactElement => {
+  const getSocialIcons = (): React.ReactElement | null => {
+    if (props.socialIcons) {
+      return (
+        <div className={ 'ui-footer--social-icons' }>
+          {props.socialIcons.map((socialIcon: ISocialIcon, index: number) => {
+            return (
+              <UISocialIcon
+                link={ socialIcon.link }
+                icon={ socialIcon.icon }
+                text={ socialIcon.text }
+                key={ index } />
+            );
+          })}
+        </div>
+      );
+    }
+
+    return null;
+  };
+
   return (
     <div className={ 'ui-footer' }>
       <UIDivider color={ 'grey' } showBorder={ true } size={ 'large' } />
-
-      <UIGrid centerItems={ true } columns={ 'three' }>
-        {props.socialIcons && props.socialIcons.map((socialIcon: SocialIcon, index: number) => {
-          return (
-            <a target="_blank" href={ socialIcon.link } key={ index } rel="noreferrer"
-              className='social-icon'>
-              {socialIcon.icon}
-              <UITypography type="p">{socialIcon.text}</UITypography>
-            </a>
-          );
-        })}
-      </UIGrid>
-
-      <UIGrid columns={ 'two' }>
-        {props.left && (
-          <UITypography type="p" fontWeight={ 700 }>{props.left.text}</UITypography>
-        )}
-
-        {props.right && (
-          <UITypography type="p" textAlign="right"><a
-            href={ props.right.link }>{props.right.text}</a></UITypography>
-        )}
-      </UIGrid>
+      {getSocialIcons()}
     </div>
   );
 };

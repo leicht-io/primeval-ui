@@ -1,17 +1,15 @@
 @mixin boxShadow() {
+  box-shadow: 0 0 20px 0 rgb(76 87 125 / 2%);
+}
+
+@mixin formElementShadow() {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
+  transition: all 0.3s linear;
 
-@mixin cardShadow() {
-  @include boxShadow();
-}
-
-@mixin boxShadowHover() {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
-}
-
-@mixin dropDownShadow() {
-  box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
+  &:hover {
+    transition: all 0.3s linear;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
+  }
 }
 
 // TODO: Move

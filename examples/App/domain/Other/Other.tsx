@@ -27,7 +27,7 @@ export const Other = (): React.ReactElement => {
 
     return (
         <>
-            <UIHeader title={{value: 'Other Components'}}/>
+            <UIHeader title='Other Components'/>
 
             <UIPageContainer title="Dividers">
                 <UIDivider size={'large'} showBorder={true}/>

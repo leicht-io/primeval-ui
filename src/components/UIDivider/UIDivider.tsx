@@ -4,12 +4,10 @@ import './UIDivider.scss';
 
 export const UIDivider = React.memo((props: IProps): React.ReactElement => {
   const getClasses = (): string => {
-    return 'divider ' + (props.size ? ' divider-' + props.size : '') + (props.showBorder ? ' divider-border' : '') + (props.vertical ? ' divider--vertical' : '') + (props.color ? (' divider--' + props.color) : '');
+    return 'ui-divider ' + (props.size ? ' ui-divider--' + props.size : '') + (props.showBorder ? ' ui-divider--border' : '') + (props.vertical ? ' ui-divider--vertical' : '') + (props.color ? (' ui-divider--' + props.color) : '');
   };
 
   return (
     <div className={ getClasses() } />
   );
 });
-
-UIDivider.displayName = 'UIDivider';

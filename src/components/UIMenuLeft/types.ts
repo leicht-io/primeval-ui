@@ -6,5 +6,7 @@ export interface IProps {
 
   onNavigate: (destination: IMenuItem) => void;
 
+  collapsed?: boolean;
+
   footer?: any;
 }

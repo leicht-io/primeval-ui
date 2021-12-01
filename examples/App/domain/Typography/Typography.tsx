@@ -13,9 +13,7 @@ export const Typography = (): React.ReactElement => {
         <>
             <UIHeader
                 breadcrumbs={"Home / Form Elements"}
-                size="small"
-                gradient={true}
-                title={{value: "Typography", skeleton: true}}/>
+                title="Typography"/>
 
             <UIPageContainer title="Headings">
                 <UITypography type={'h1'}>Heading 1</UITypography>

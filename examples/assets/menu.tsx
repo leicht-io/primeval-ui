@@ -41,6 +41,11 @@ export const Menu: IMenuItem[] = [
         icon: <IoCardOutline/>,
 
     }, {
+        title: 'Post',
+        link: '/post',
+        icon: <IoDocumentOutline/>
+
+    }, {
         title: 'Other',
         link: '/other',
         icon: <IoHelpCircle/>,

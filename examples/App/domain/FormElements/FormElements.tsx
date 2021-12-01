@@ -1,14 +1,12 @@
 import * as React from "react";
-import {UIButton, UIGrid, UIHeader, UIInput, UIPageContainer, UITextArea, UITypography} from "../../../../src";
+import {UIButton, UIGrid, UIHeader, UIInput, UIPageContainer, UITextArea} from "../../../../src";
 
 export const FormElements = (): React.ReactElement => {
     return (
         <>
             <UIHeader
-                size={"small"}
-                gradient={true}
                 breadcrumbs={"Home / Form Elements"}
-                title={{value: "Form Elements", skeleton: true}}/>
+                title="Form Elements"/>
 
             <UIPageContainer title="Buttons">
                 <UIButton text="Primary Button" type="primary"/>

@@ -1,7 +1,10 @@
 @import "../../@core/styles/@theme.scss";
 
-.btn {
-  @include cardShadow();
+$smallHeight: $base-spacing * 4;
+$mediumHeight: $base-spacing * 5.5;
+
+.ui-button {
+  @include formElementShadow();
 
   cursor: pointer;
   font-size: 14px;
@@ -14,10 +17,10 @@
   float: left;
   font-weight: 500;
 
-  border-radius: $base-spacing * 0.5;
+  border-radius: $form-element-border-radius;
 
-  height: $base-spacing * 5.5;
-  line-height: $base-spacing * 5.5;
+  height: $mediumHeight;
+  line-height: $mediumHeight;
   padding: 0 $base-spacing * 2;
 
   transition: all 0.3s;
@@ -32,11 +35,12 @@
     margin-left: 0;
   }
 
-  &.btn--full-width {
-    width: 100%;
+  &--small {
+    height: $smallHeight;
+    line-height: $smallHeight;
   }
 
-  &.btn--primary {
+  &--primary {
     color: #ffffff;
     background: #009688;
 
@@ -50,7 +54,7 @@
     }
   }
 
-  &.btn--danger {
+  &--danger {
     color: #ffffff;
     background: #961700;
 
@@ -64,7 +68,7 @@
     }
   }
 
-  &.btn--success {
+  &--success {
     color: #ffffff;
     background: #4d9600;
 
@@ -78,7 +82,7 @@
     }
   }
 
-  &.btn--disabled {
+  &--disabled {
     cursor: not-allowed;
     pointer-events: none;
 

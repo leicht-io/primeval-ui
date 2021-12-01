@@ -3,10 +3,11 @@ import {IProps} from './types';
 import './UIButton.scss';
 import {useClassNames} from '../../@core';
 
-export const UIButton = React.memo((props: IProps): React.ReactElement => {
-  const classes: string = useClassNames('btn btn-primary', [
-    [props.type, `btn--${props.type}`],
-    [props.disabled, 'btn--disabled']
+export const UIButton = (props: IProps): React.ReactElement => {
+  const classes: string = useClassNames('ui-button ui-button--primary', [
+    [props.type, `ui-button--${props.type}`],
+    [props.disabled, 'ui-button--disabled'],
+    [props.size, `ui-button--${props.size}`],
   ]);
 
   return (
@@ -17,6 +18,4 @@ export const UIButton = React.memo((props: IProps): React.ReactElement => {
       {props.text || props.children}
     </button>
   );
-});
-
-UIButton.displayName = 'UIButton';
+};

@@ -12,10 +12,7 @@ export const Gallery = (): React.ReactElement => {
 
     return (
         <>
-            <UIHeader
-                size={"small"}
-                title={{value: "Gallery", skeleton: true}}
-                gradient={true}/>
+            <UIHeader title="Gallery" />
 
             <UIPageContainer>
                 <UIGallery gallery={gallery} skeletons={12}/>

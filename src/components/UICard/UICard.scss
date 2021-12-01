@@ -1,7 +1,7 @@
 @import "../../@core/styles/@theme.scss";
 
 .ui-image {
-  @include cardShadow();
+  @include boxShadow();
 
   position: relative;
   border-radius: $base-spacing;
@@ -21,9 +21,6 @@
     cursor: pointer;
 
     &:hover {
-      @include boxShadowHover();
-
-      transition: all 0.3s linear;
       filter: grayscale(75%);
     }
   }
