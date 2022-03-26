@@ -10,7 +10,7 @@ export const UIMenu = (props: IProps): React.ReactElement => {
   let xDiff: any = null;
   let yDiff: any = null;
   let timeDown: any = null;
-  let startEl: any = null;
+  let startEl: any;
   let timer: any = null;
   let last: any = null;
 
@@ -45,6 +45,7 @@ export const UIMenu = (props: IProps): React.ReactElement => {
       (window as any).CustomEvent = (event, params) => {
         params = params || {bubbles: false, cancelable: false, detail: undefined};
         const evt = document.createEvent('CustomEvent');
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
         return evt;
       };
@@ -94,6 +95,7 @@ export const UIMenu = (props: IProps): React.ReactElement => {
   const throttleScroll = () => {
     const now = +new Date();
     if (last && now < last + throttleDelay) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       clearTimeout(timer);
       timer = setTimeout(() => {
         last = now;
@@ -121,13 +123,15 @@ export const UIMenu = (props: IProps): React.ReactElement => {
   const handleTouchEnd = (e) => {
     if (startEl !== e.target) return;
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const swipeThreshold = parseInt(startEl.getAttribute('data-swipe-threshold') || '20', 10); // default 10px
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const swipeTimeout = parseInt(startEl.getAttribute('data-swipe-timeout') || '500', 10); // default 1000ms
     const timeDiff = Date.now() - timeDown;
     let eventType = '';
 
-    if (Math.abs(xDiff) > Math.abs(yDiff)) { // most significant
-      if (Math.abs(xDiff) > swipeThreshold && timeDiff < swipeTimeout) {
+    if (Math.abs(Number(xDiff)) > Math.abs(Number(yDiff))) { // most significant
+      if (Math.abs(Number(xDiff)) > swipeThreshold && timeDiff < swipeTimeout) {
         if (xDiff > 0) {
           eventType = 'swiped-left';
         } else {
@@ -135,7 +139,7 @@ export const UIMenu = (props: IProps): React.ReactElement => {
         }
       }
     } else {
-      if (Math.abs(yDiff) > swipeThreshold && timeDiff < swipeTimeout) {
+      if (Math.abs(Number(yDiff)) > swipeThreshold && timeDiff < swipeTimeout) {
         if (yDiff > 0) {
           eventType = 'swiped-up';
         } else {
