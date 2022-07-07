@@ -22,7 +22,7 @@ export const UIScrollProgress = React.memo((): React.ReactElement => {
     const documentBody: HTMLElement = document.body;
     const scrollTop: string = 'scrollTop';
     const scrollHeight: string = 'scrollHeight';
-    const value = (documentElement[scrollTop] || documentBody[scrollTop]) / ((documentElement[scrollHeight] || documentBody[scrollHeight]) - documentElement.clientHeight) * 100;
+    const value = (documentElement[Number(scrollTop)] || documentBody[Number(scrollTop)]) / ((documentElement[Number(scrollHeight)] || documentBody[Number(scrollHeight)]) - documentElement.clientHeight) * 100;
 
     if(!isNaN(value)) {
       setValue(value);

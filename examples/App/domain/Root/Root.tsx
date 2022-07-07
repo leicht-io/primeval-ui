@@ -2,10 +2,10 @@ import * as React from "react";
 import {IMenuItem, UIMenu, UIScrollProgress} from "../../../../src";
 import {logo} from "../../../assets/logo";
 import {Menu} from "../../../assets/menu";
-import {useHistory} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 export const Root = (props: { children: any }): React.ReactElement => {
-    const history = useHistory();
+    const navigate = useNavigate();
     const [menuItems] = React.useState<IMenuItem[]>(Menu);
 
     return (
@@ -16,7 +16,7 @@ export const Root = (props: { children: any }): React.ReactElement => {
                 menuItems={menuItems}
                 logo={logo}
                 onNavigate={(destination: IMenuItem) => {
-                    history.push(destination.link as any);
+                    navigate(destination.link as any);
                 }}
             />
             {props.children}

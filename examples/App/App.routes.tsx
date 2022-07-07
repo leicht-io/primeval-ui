@@ -1,18 +1,18 @@
 import * as React from 'react';
-import {Redirect, Route, Switch} from 'react-router-dom';
+import {Navigate, Route, Routes} from 'react-router-dom';
 import {FormElements, Gallery, GridAndCards, Icons, Other, Typography} from "./domain";
 import {App} from "./App";
 
 export default (
-    <Switch>
-        <Route path="/typography" component={() => <Typography/>}/>
-        <Route path="/form-elements" component={() => <FormElements/>}/>
-        <Route path="/icons" component={() => <Icons/>}/>
-        <Route path="/gallery" component={() => <Gallery/>}/>
-        <Route path="/grid-and-cards" component={() => <GridAndCards/>}/>
-        <Route path="/other" component={() => <Other/>}/>
-        <Route path="/" component={() => <App/>}/>
+  <Routes>
+    <Route path="/typography" element={<Typography/>}/>
+    <Route path="/form-elements" element={<FormElements/>}/>
+    <Route path="/icons" element={<Icons/>}/>
+    <Route path="/gallery" element={<Gallery/>}/>
+    <Route path="/grid-and-cards" element={<GridAndCards/>}/>
+    <Route path="/other" element={<Other/>}/>
+    <Route path="/" element={<App/>}/>
 
-        <Redirect to="/"/>
-    </Switch>
+    <Route path="*" element={<Navigate to="/" replace/>}/>
+  </Routes>
 );
