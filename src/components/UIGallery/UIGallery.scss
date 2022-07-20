@@ -18,6 +18,11 @@
   align-content: stretch;
 }
 
+.glide__arrow.glide__arrow.glide__arrow {
+  border-radius: 100%;
+  background-color: #eeeeee;
+}
+
 .ui-gallery--slideshow {
   .glide__slide {
     display: flex;

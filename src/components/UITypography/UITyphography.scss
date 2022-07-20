@@ -26,6 +26,8 @@
 
 .ui-typography {
   &.ui-typography--skeleton {
+    opacity: 0.2;
+
     height: 18px;
     line-height: 1.58;
     background-size: 600% 600%;
@@ -33,6 +35,7 @@
     margin-top: 12px;
     border-radius: 4px;
     margin-bottom: 4px;
+
 
     -webkit-animation: skeletonGradient 13s ease infinite;
     animation: skeletonGradient 13s ease infinite;

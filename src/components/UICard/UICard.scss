@@ -38,7 +38,7 @@
   }
 
   .ui-img-label-wrapper {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(69, 69, 69, 0.3);
     backdrop-filter: blur(2px);
     position: absolute;
     bottom: 0;
@@ -61,6 +61,7 @@
     p {
       margin: 0 $base-spacing;
       text-align: center;
+      color: #ffffff;
 
       white-space: nowrap;
       overflow: hidden;
