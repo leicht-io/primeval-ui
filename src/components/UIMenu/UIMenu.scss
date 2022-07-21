@@ -155,6 +155,7 @@ body.nav--disable-scroll {
     text-align: center;
     padding: 22px 16px;
     text-decoration: none;
+    font-weight: 700;
 
     @include sm() {
       padding: 36px 16px;
@@ -196,13 +197,14 @@ body.nav--disable-scroll {
   > .nav-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     align-items: center;
-    align-content: center;
+    align-content: stretch;
 
-    width: 1170px;
-    max-width: calc(100% - 24 * 2px);
+    width: 100vw;
+    padding-left: calc($base-spacing * 2);
+    padding-right: calc($base-spacing * 2);
 
     .nav-logo {
       width: auto;
@@ -419,6 +421,8 @@ body.nav--disable-scroll {
     }
 
     .nav {
+      margin-left: 120px;
+
       height: 56px;
       display: flex;
       flex-direction: row;
@@ -520,4 +524,19 @@ body.nav--disable-scroll {
       align-content: center;
     }
   }
+}
+
+.nav-item--primary {
+  a {
+    margin-top: 25px !important;
+    height: 48px !important;
+    border-radius: 24px !important;
+    text-transform: none !important;
+    font-size: 14px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  right: calc($base-spacing * 2);
+  position: absolute;
 }

@@ -1,8 +1,9 @@
 export interface IMenuItem {
   title: string;
   link?: string;
-  button?: boolean;
   active?: boolean;
+
+  primaryButton?: boolean;
 
   expanded?: boolean;
 

@@ -208,7 +208,7 @@ export const UIMenu = (props: IProps): React.ReactElement => {
           </div>
         </>
       );
-    } else if (menuItem.button) {
+    } else if (menuItem.primaryButton) {
       return (
         <a onClick={ (event) => {
           handleClick(event, menuItem);
@@ -282,7 +282,7 @@ export const UIMenu = (props: IProps): React.ReactElement => {
             {props.menuItems.map((menuItem: IMenuItem, index: number) => {
               return (
                 <div
-                  className={ 'nav-item ' + ((menuItem.menuItems && menuItem.menuItems.length > 0) ? 'nav-sub' : '') + (menuItem.active || hasActiveChildren(menuItem) ? ' active' : '') + (menuItem.button ? ' nav-item--primary' : '') }
+                  className={ 'nav-item ' + ((menuItem.menuItems && menuItem.menuItems.length > 0) ? 'nav-sub' : '') + (menuItem.active || hasActiveChildren(menuItem) ? ' active' : '') + (menuItem.primaryButton ? ' nav-item--primary' : '') }
                   key={ index }>
                   {getMenuItem(menuItem)}
                 </div>
