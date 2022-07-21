@@ -10,7 +10,7 @@
 @import "atomics";
 
 @mixin fontFamily() {
-  font-family: Poppins, Helvetica, "sans-serif";
+  font-family: Helvetica, "sans-serif";
 }
 
 body {
@@ -21,7 +21,7 @@ body {
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% 250px;
-  font-family: 'Poppins', Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
 
   font-size: 13px;
   font-weight: 400;

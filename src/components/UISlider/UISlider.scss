@@ -137,12 +137,15 @@ ul.glide__slides {
 }
 
 .glide {
-  height: 530px;
+  height: calc(100vh - 60px);
+  width: calc(100vw - 398px);
   background: #AFAFAF;
 
   &--in-card {
-    border-radius: 16px;
+    border-radius: $border-radius;
     overflow: hidden;
+
+    @include boxShadow();
   }
 }
 

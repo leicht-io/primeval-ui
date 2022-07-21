@@ -19,7 +19,7 @@ export const UIHeader = (props: IProps): React.ReactElement => {
   };
 
   const getClasses = () => {
-    const baseClasses: string = 'ui-header ';
+    const baseClasses: string = 'ui-header';
 
     return baseClasses;
   };
@@ -40,9 +40,20 @@ export const UIHeader = (props: IProps): React.ReactElement => {
     return null;
   };
 
+  const getBreadcrumbs = () => {
+    return (
+      <div>
+        <p>Tst / Test</p>
+      </div>
+    );
+  };
+
   return (
     <header className={ getClasses() }>
-      {getTitle()}
+      <div className="ui-header--title">
+        {getTitle()}
+        {getBreadcrumbs()}
+      </div>
       {getButtons()}
     </header>
   );

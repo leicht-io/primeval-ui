@@ -37,6 +37,7 @@
 
     .ui-navigation--item {
       padding: 0;
+
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
@@ -91,6 +92,13 @@
     margin-bottom: 24px;
     padding-bottom: 4px;
 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+
     svg:first-child {
       margin-right: $base-spacing * 2;
       transition: all 0.250s linear;
@@ -119,7 +127,7 @@
     padding-right: 18px;
     color: #3f4254;
     font-weight: 500;
-    border-radius: 12px;
+    border-radius: $border-radius;
     margin-bottom: 4px;
 
     display: flex;

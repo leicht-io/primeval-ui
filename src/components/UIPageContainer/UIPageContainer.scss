@@ -1,10 +1,13 @@
 @import "../../@core/styles/@theme.scss";
 
 .ui-page-container {
+  width: calc(100vw - 466px);
   overflow: hidden;
   background: #fff;
   border-radius: $border-radius;
   padding: 16px 32px;
+
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   @include boxShadow();
 

@@ -1,5 +1,5 @@
 @mixin boxShadow() {
-  box-shadow: 0 0 20px 0 rgb(76 87 125 / 2%);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 @mixin formElementShadow() {

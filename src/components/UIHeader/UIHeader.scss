@@ -3,12 +3,12 @@
 .ui-header {
   border-radius: $border-radius;
 
-  width: auto;
+  width: calc(100vw - 470px);
   position: relative;
   background: white;
   padding-left: 36px;
   padding-right: 36px;
-  height: 64px;
+  height: 86px;
   margin-top: 56px;
 
   @include sm() {
@@ -30,22 +30,10 @@
     font-size: 18px;
     text-shadow: 0px 0px 19px rgb(80 80 80 / 10%);
     z-index: 9;
-    font-weight: 500;
+    font-weight: 700;
     margin: 0;
-    line-height: 64px;
+    line-height: 18px;
 
     letter-spacing: -0.022em;
-  }
-
-  p.breadcrumbs {
-    margin-top: 0;
-    margin-bottom: $base-spacing * 2;
-    color: #fff;
-    font-size: 18px;
-    display: none;
-
-    @include sm() {
-      display: block;
-    }
   }
 }
