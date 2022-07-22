@@ -1,0 +1,49 @@
+@import "../../@core/styles/@theme.scss";
+
+.ui-header-2 {
+  height: 590px;
+  width: 100vw;
+
+  margin-top: 80px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+
+  img {
+    position: absolute;
+    top:0;
+    height: 590px;
+    width: 100vw;
+    object-fit: cover;
+  }
+
+
+  div {
+    &:first-child {
+      background-color: #f4f4f4;
+    }
+
+    width: 50vw;
+  }
+
+  &--overlay {
+    position: absolute;
+    left: 50vw;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    width: 100vw !important;
+
+    background: black;
+    opacity: 0.4;
+  }
+}

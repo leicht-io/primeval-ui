@@ -1,12 +1,11 @@
 import * as React from "react";
 import {UIHeader, UIPageContainer, UITypography} from "../../../../src";
+import {UIHeader2} from "../../../../src/components/UIHeader2";
 
 export const Typography = (): React.ReactElement => {
     return (
         <>
-            <UIHeader
-                gradient={true}
-                title={{value: "Typography", skeleton: true}}/>
+            <UIHeader2 backgroundImageUrl={"https://picsum.photos/1920/1080"} />
 
             <UIPageContainer>
                 <UITypography type={'h1'}>Heading 1</UITypography>
