@@ -76,7 +76,7 @@ p, strong, i, b, u, pre, li {
   font-size: 18px;
   letter-spacing: -0.004em;
   line-height: 1.58;
-  margin-top: 0.42em;
+  margin-top:0;
   margin-bottom: -0.46em;
 
   @include fontFamily();

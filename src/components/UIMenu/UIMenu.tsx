@@ -262,6 +262,22 @@ export const UIMenu = (props: IProps): React.ReactElement => {
           </a>
         </div>
 
+        <div className="nav-responsive-button">
+          {props.menuItems.map((menuItem: IMenuItem, index: number) => {
+            if(menuItem.primaryButton) {
+              return (
+                <div
+                  className={ 'nav-item ' + ((menuItem.menuItems && menuItem.menuItems.length > 0) ? 'nav-sub' : '') + (menuItem.active || hasActiveChildren(menuItem) ? ' active' : '') + (menuItem.primaryButton ? ' nav-item--primary' : '') }
+                  key={ index }>
+                  {getMenuItem(menuItem)}
+                </div>
+              );
+            }
+
+            return null;
+          })}
+        </div>
+
         <div className="nav-background" onClick={ () => {
           if (showSidebar) {
             setShowSidebar(false);

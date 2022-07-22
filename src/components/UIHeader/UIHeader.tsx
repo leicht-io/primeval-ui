@@ -4,7 +4,7 @@ import {IProps} from './types';
 import {UICard} from '../UICard';
 import {animated, useTransition} from '@react-spring/web';
 
-// TODO: reactor this component
+// TODO: refactor this component
 export const UIHeader = (props: IProps): React.ReactElement => {
   const transitions = useTransition(true, {
     from: {opacity: props.disableAnimations ? 1 : 0},
@@ -98,12 +98,27 @@ export const UIHeader = (props: IProps): React.ReactElement => {
     return baseClasses;
   };
 
-  return (
-    <header className={ getClasses() }>
-      {getTopGradient()}
-      {getContent()}
-      {getBottomGradient()}
-      {getHeaderImage()}
-    </header>
-  );
+  if (props.size === 'small') {
+    return (
+      <header className={ getClasses() }>
+        {getTopGradient()}
+        {getContent()}
+        {getBottomGradient()}
+        {getHeaderImage()}
+      </header>
+    );
+  } else {
+    return (
+      <header className={ getClasses() }>
+        <div className={ 'header--large-left' }>
+          {getTopGradient()}
+          {getContent()}
+        </div>
+        <div className={ 'header--large-right' }>
+          {getBottomGradient()}
+          {getHeaderImage()}
+        </div>
+      </header>
+    );
+  }
 };

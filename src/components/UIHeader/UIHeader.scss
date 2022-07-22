@@ -1,7 +1,16 @@
 @import "../../@core/styles/@theme.scss";
+// SEE: https://www.ekhartyoga.com/articles/practice/7-ways-to-bring-mindfulness-into-your-yoga-practice
 
 .header {
   overflow: hidden;
+
+  .header--large-left {
+    width: 50vw;
+  }
+
+  .header--large-right {
+    width: 50vw;
+  }
 
   img.ui-header-img {
     opacity: 0;
@@ -21,7 +30,9 @@
   }
 
   &.ui-header--large {
-    height: 500px;
+    height: 590px;
+    width: 100vw;
+    overflow: hidden;
   }
 
   &.ui-header--small {
@@ -31,18 +42,22 @@
   width: 1070px;
   margin: 0 auto;
 
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
 
-  position: relative;
+  &.ui--header-small {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
 
   h1 {
     text-align: center;
@@ -72,17 +87,7 @@
   }
 
   &.header-full-width {
-    width: 100%;
-  }
-
-  &:before {
-    background: rgba(0, 0, 0, 0.4);
-    content: " ";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    width: 100vw;
   }
 
   .header--bg-top-gradient {

@@ -258,7 +258,32 @@ body.nav--disable-scroll {
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
+    .nav-item--primary {
+      display: none;
+    }
+
+    .nav-responsive-button {
+      height: 80px !important;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: stretch;
+
+      .nav-item--primary {
+
+        display: inherit;
+        border: none;
+
+        a {
+          margin-top: 0 !important;
+
+        }
+      }
+    }
+
     .nav {
       overflow-y: scroll;
     }
@@ -415,7 +440,11 @@ body.nav--disable-scroll {
     height: 45px;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
+    .nav-responsive-button {
+      display: none;
+    }
+
     .nav-background, .nav-hamburger {
       display: none;
     }
