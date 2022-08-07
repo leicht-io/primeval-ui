@@ -15,7 +15,7 @@ body.nav--disable-scroll {
   height: $navigation-height;
 
   background-color: rgba(255, 255, 255, 0.3);
-
+  box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -1px #0000000f;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

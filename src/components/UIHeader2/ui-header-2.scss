@@ -1,7 +1,7 @@
 @import "../../@core/styles/@theme.scss";
 
 .ui-header-2 {
-  height: 590px;
+  max-height: 590px;
   width: 100vw;
 
   margin-top: 80px;
@@ -17,21 +17,67 @@
   align-items: stretch;
   align-content: stretch;
 
+  &--left {
+    background-color: #f4f4f4;
+
+    &-content {
+      max-width: calc(100% - 100px);
+      float: none;
+      padding: 50px;
+
+      @include media-breakpoint-up(sm) {
+        padding: 75px 70px 0 0;
+        max-width: 650px;
+        float: right;
+      }
+    }
+
+    &-breadcrumbs {
+      height: 30px;
+      margin-bottom: 25px;
+      text-align: left;
+
+      color: #6b6b6b;
+      font-size: 1rem;
+      line-height: 30px;
+      font-weight: 400;
+      position: relative;
+      display: inline-block;
+      transition: all 0.2s ease;
+    }
+
+    &-author {
+      padding: 50px 0;
+    }
+
+    &-excerpt {
+      color: #545554;
+      font-size: 1.1875rem;
+      line-height: 1.9375rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
   img {
     position: absolute;
-    top:0;
+    top: 0;
     height: 590px;
     width: 100vw;
     object-fit: cover;
   }
 
+  h1 {
+    color: #545554;
+    font-weight: bold;
+    font-size: 2.5rem;
+    line-height: 3.25rem;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    margin-top: 0;
+  }
 
   div {
-    &:first-child {
-      background-color: #f4f4f4;
-    }
-
-    width: 50vw;
+    width: 100vw;
   }
 
   &--overlay {
@@ -44,6 +90,19 @@
     width: 100vw !important;
 
     background: black;
-    opacity: 0.4;
+    opacity: 0;
+    visibility: hidden;
+
+    @include media-breakpoint-up(sm) {
+      opacity: 0.4;
+      visibility: visible;
+    }
+  }
+
+
+  @include media-breakpoint-up(sm) {
+    div {
+      width: 50vw;
+    }
   }
 }

@@ -6,15 +6,18 @@ export const UIHeader2 = (props: UIHeaderTypes) => {
   return (
     <div className="ui-header-2" style={ {background: `url(${props.backgroundImageUrl})`, backgroundSize: 'cover'} }>
 
-      <div>
-
+      <div className="ui-header-2--left">
+        <div className="ui-header-2--left-content">
+          <div className="ui-header-2--left-breadcrumbs">{props.breadcrumbs}</div>
+          <h1>{props.title}</h1>
+          <p className="ui-header-2--left-excerpt">{props.excerpt}</p>
+          <p className="ui-header-2--left-author">by <b>{props.author}</b></p>
+        </div>
       </div>
       <div>
       </div>
 
-      <div className={ 'ui-header-2--overlay' }>
-
-      </div>
+      <div className={ 'ui-header-2--overlay' } />
     </div>
   );
 };
