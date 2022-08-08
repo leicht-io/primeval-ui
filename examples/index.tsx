@@ -20,11 +20,7 @@ const Application = (): React.ReactElement => {
           {appRoutes}
 
           <UIFooter
-            left={{text: "\u00a9 Copyright 2021"}}
-            right={{
-              text: "Contact",
-              link: "#contact"
-            }}
+            text="© 2022 Primeval UI"
             socialIcons={socialIcons}
           />
         </Root>

@@ -11,7 +11,7 @@ export const UIHeader2 = (props: UIHeaderTypes) => {
           <div className="ui-header-2--left-breadcrumbs">{props.breadcrumbs}</div>
           <h1>{props.title}</h1>
           <p className="ui-header-2--left-excerpt">{props.excerpt}</p>
-          <p className="ui-header-2--left-author">by <b>{props.author}</b></p>
+          <p className="ui-header-2--left-sub-title"><b>{props.subTitle}</b></p>
         </div>
       </div>
       <div>

@@ -1,6 +1,8 @@
 @use "sass:math";
 @import "src/styles/main";
 
+$breakpoint: 1300px;
+
 .disable-animations {
   transition: none !important;
   opacity: 1 !important;
@@ -30,6 +32,24 @@ body.nav--disable-scroll {
 
   transition: all 0.250s linear;
 
+  &.transparent {
+    a {
+      color: #5f6368;
+    }
+
+    .logo svg:last-child {
+      fill: #242424;
+    }
+
+    .logo svg:first-child .p2 {
+      fill: #ffffff;
+    }
+
+    .logo svg:first-child .p1 {
+      fill: #242424;
+    }
+  }
+
   &.sidebar-visible {
     a {
       color: $secondaryText;
@@ -55,6 +75,8 @@ body.nav--disable-scroll {
 
   .logo {
     height: $navigation-height;
+    width: 180px;
+
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -202,6 +224,7 @@ body.nav--disable-scroll {
     align-content: stretch;
 
     width: 100vw;
+    max-width: 1300px;
     padding-left: calc($base-spacing * 2);
     padding-right: calc($base-spacing * 2);
 
@@ -257,7 +280,7 @@ body.nav--disable-scroll {
     }
   }
 
-  @media (max-width: 1023px) {
+  @media (max-width: $breakpoint) {
     .nav-item--primary {
       display: none;
     }
@@ -272,7 +295,6 @@ body.nav--disable-scroll {
       align-content: stretch;
 
       .nav-item--primary {
-
         display: inherit;
         border: none;
 
@@ -439,7 +461,7 @@ body.nav--disable-scroll {
     height: 45px;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: #{$breakpoint + 1}) {
     .nav-responsive-button {
       display: none;
     }
@@ -449,13 +471,14 @@ body.nav--disable-scroll {
     }
 
     .nav {
-      margin-left: 120px;
-
       height: 56px;
+
+      margin-left: 80px;
+
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      justify-content: flex-end;
+      justify-content: flex-start;
       align-items: center;
       align-content: stretch;
     }
@@ -555,8 +578,10 @@ body.nav--disable-scroll {
 }
 
 .nav-item--primary {
+  margin-left: auto;
+
   a {
-    margin-top: 25px !important;
+    margin-top: 0 !important;
     height: 48px !important;
     border-radius: 24px !important;
     text-transform: none !important;
@@ -564,7 +589,4 @@ body.nav--disable-scroll {
     padding-left: 24px !important;
     padding-right: 24px !important;
   }
-
-  right: calc($base-spacing * 2);
-  position: absolute;
 }

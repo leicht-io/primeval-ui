@@ -1,28 +1,54 @@
 .ui-footer {
-  p, a {
-    font-size: 16px;
-    background: none !important;
-  }
-}
+  width: 100vw;
+  height: 125px;
 
-a.social-icon {
-  margin-right: 20px;
+  border-top: 1px solid #DCDCDC;
+  background-color: #f8f9fa;
+
+  padding-left: 4.6875rem;
+  padding-right: 4.6875rem;
+
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  align-content: center;
+  align-content: stretch;
 
-    padding:0 !important;
+  .ui-typography {
+    margin-bottom: 0;
+    color: #727272;
+    font-size: 14px;
+  }
 
-  p {
-    margin-top: -8px;
-    line-height: 20px;
-    font-size: 16px;
-    font-weight: 400;
-    text-decoration: none;
-    color: #00695c;
-    margin-left: 8px;
+  &--content {
+    margin: 0 auto;
+    width: 100vw;
+    max-width: 1300px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+  }
+
+  &--socials {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: stretch;
+
+    .ui-i {
+      margin-left: 16px;
+      cursor: pointer;
+
+      svg, svg path {
+        fill: #727272;
+      }
+    }
   }
 }

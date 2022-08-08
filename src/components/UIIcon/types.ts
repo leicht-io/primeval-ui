@@ -5,5 +5,5 @@ export interface IProps {
 
   color?: 'white' | 'grey' | 'black';
 
-  onClick?: () => void;
+  onClick?: (icon: string) => void;
 }

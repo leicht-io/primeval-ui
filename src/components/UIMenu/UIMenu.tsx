@@ -15,7 +15,7 @@ export const UIMenu = (props: IProps): React.ReactElement => {
   let last: any = null;
 
   const throttleDelay: number = 100;
-
+  const baseClass: string = 'ui-navigation';
   const [scrollActive, setScrollActive] = React.useState<boolean>(false);
   const [showSidebar, setShowSidebar] = React.useState<boolean>(false);
   const [disableAnimations, setDisableAnimations] = React.useState<boolean>(false);
@@ -23,6 +23,24 @@ export const UIMenu = (props: IProps): React.ReactElement => {
   React.useEffect(() => {
     toggleMenu(showSidebar);
   }, [showSidebar]);
+
+  const getClasses = (): string => {
+    let classBuilder = `${baseClass} `;
+    if(scrollActive) {
+      classBuilder += 'nav-wrapper--active ';
+    }
+    if(disableAnimations){
+      classBuilder += 'disable-animations ';
+    }
+    if(showSidebar) {
+      classBuilder += 'sidebar-visible ';
+    }
+    if(props.transparent) {
+      classBuilder += 'transparent ';
+    }
+
+    return classBuilder;
+  };
 
   React.useEffect(() => {
     if (window.scrollY > 0) {
@@ -246,7 +264,7 @@ export const UIMenu = (props: IProps): React.ReactElement => {
 
   return (
     <div
-      className={ 'ui-navigation ' + (scrollActive ? 'nav-wrapper--active' : '') + (disableAnimations ? ' disable-animations' : '') + (showSidebar ? ' sidebar-visible' : '') }>
+      className={ getClasses() }>
       <div className="nav-container">
         <div className="nav-hamburger" onClick={ () => {
           setShowSidebar(true);
@@ -296,16 +314,34 @@ export const UIMenu = (props: IProps): React.ReactElement => {
           </div>
           <div className="nav-content">
             {props.menuItems.map((menuItem: IMenuItem, index: number) => {
-              return (
-                <div
-                  className={ 'nav-item ' + ((menuItem.menuItems && menuItem.menuItems.length > 0) ? 'nav-sub' : '') + (menuItem.active || hasActiveChildren(menuItem) ? ' active' : '') + (menuItem.primaryButton ? ' nav-item--primary' : '') }
-                  key={ index }>
-                  {getMenuItem(menuItem)}
-                </div>
-              );
+              if(!menuItem.primaryButton) {
+                return (
+                  <div
+                    className={ 'nav-item ' + ((menuItem.menuItems && menuItem.menuItems.length > 0) ? 'nav-sub' : '') + (menuItem.active || hasActiveChildren(menuItem) ? ' active' : '') + (menuItem.primaryButton ? ' nav-item--primary' : '') }
+                    key={ index }>
+                    {getMenuItem(menuItem)}
+                  </div>
+                );
+              }
+
+              return null;
             })}
           </div>
         </nav>
+
+        {props.menuItems.map((menuItem: IMenuItem, index: number) => {
+          if(menuItem.primaryButton) {
+            return (
+              <div
+                className={ 'nav-item ' + ((menuItem.menuItems && menuItem.menuItems.length > 0) ? 'nav-sub' : '') + (menuItem.active || hasActiveChildren(menuItem) ? ' active' : '') + (menuItem.primaryButton ? ' nav-item--primary' : '') }
+                key={ index }>
+                {getMenuItem(menuItem)}
+              </div>
+            );
+          }
+
+          return null;
+        })}
       </div>
     </div>
   );

@@ -13,6 +13,7 @@ export const Root = (props: { children: any }): React.ReactElement => {
             <UIScrollProgress/>
 
             <UIMenu
+                transparent={location.pathname !== "/"}
                 menuItems={menuItems}
                 logo={logo}
                 onNavigate={(destination: IMenuItem) => {
