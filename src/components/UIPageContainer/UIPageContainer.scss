@@ -1,31 +1,17 @@
-@import "../../@core/styles/@theme.scss";
+@import "src/styles/main";
 
 .ui-page-container {
-  &:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
-  }
-
-  flex-grow: 1;
-
-  max-width: 880px;
+  width: calc(100vw - #{$base-spacing * 8});
   margin: 0 auto;
-
   overflow: visible;
 
-  .ui-icons.ui-icons a {
-    background: none;
+  @include lg {
+    width: 880px;
   }
 
-  &.fullwidth {
-    max-width: 100%;
-  }
 
-  a:not(.btn), code {
+
+  /* a:not(.btn), code {
     cursor: pointer;
     color: #424242;
     overflow-wrap: break-word;
@@ -38,5 +24,5 @@
     text-decoration: none;
     background: -webkit-gradient(linear, left top, right top, from(#fce4ee), to(#cce7ff));
     background: linear-gradient(to right, #fce4ee, #cce7ff);
-  }
+  } */
 }

@@ -1,5 +1,5 @@
-@import "../../@core/styles/@theme.scss";
 @import "UIGridDirections";
+@import "src/styles/main";
 
 .grid-item {
   @include skeleton();
@@ -7,11 +7,11 @@
   display: block;
   height: 150px;
 
-  @include sm() {
+  @include sm {
     height: 200px;
   }
 
-  @include lg() {
+  @include lg {
     height: 280px;
   }
 
@@ -21,14 +21,12 @@
 }
 
 .grid--responsive {
-  @include xs() {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: stretch;
-  }
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
 }
 
 .grid {
@@ -157,7 +155,7 @@
   &.grid-two-columns {
     grid-template-columns: 1fr;
 
-    @include sm() {
+    @include sm {
       grid-template-columns: 1fr 1fr;
     }
   }
@@ -165,11 +163,11 @@
   &.grid-three-columns {
     grid-template-columns: 1fr;
 
-    @include sm() {
+    @include sm {
       grid-template-columns: 1fr 1fr;
     }
 
-    @include md() {
+    @include md {
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
@@ -177,11 +175,11 @@
   &.grid-four-columns {
     grid-template-columns: 1fr;
 
-    @include sm() {
+    @include sm {
       grid-template-columns: 1fr 1fr;
     }
 
-    @include md() {
+    @include md {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }

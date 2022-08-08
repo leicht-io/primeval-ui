@@ -1,4 +1,4 @@
-@import "../../@core/styles/@theme.scss";
+@import "src/styles/main";
 // SEE: https://www.ekhartyoga.com/articles/practice/7-ways-to-bring-mindfulness-into-your-yoga-practice
 
 .header {
@@ -73,7 +73,7 @@
     font-size: 42px;
     letter-spacing: -0.022em;
 
-    @include sm() {
+    @include sm {
       padding-top: 0;
     }
 
@@ -106,7 +106,7 @@
     font-size: 18px;
     display: none;
 
-    @include sm() {
+    @include sm {
       display: block;
     }
 
@@ -122,7 +122,7 @@
     margin-top: 20px;
     overflow: hidden;
 
-    @include md() {
+    @include md {
       margin-top: 40px;
     }
   }
@@ -137,7 +137,7 @@
     align-content: center;
     width: 100%;
 
-    @include lg() {
+    @include lg {
       width: $base-content-width;
     }
 
@@ -149,7 +149,7 @@
   .header--row {
     padding: 0 $base-spacing * 3;
 
-    @include lg() {
+    @include lg {
       padding: 0;
     }
 
@@ -159,7 +159,7 @@
       overflow: hidden;
       line-height: 42px;
 
-      @include sm() {
+      @include sm {
         padding-top: 0;
       }
     }
@@ -185,7 +185,7 @@
       float: left;
       margin-bottom: 20px;
 
-      @include md() {
+      @include md {
         margin-right: 40px;
         width: auto;
         display: block;
@@ -195,7 +195,7 @@
       &.author-image {
         display: none;
 
-        @include md() {
+        @include md {
           display: block;
         }
       }

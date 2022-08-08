@@ -1,6 +1,5 @@
 @use "sass:math";
-
-@import "../../@core/styles/@theme.scss";
+@import "src/styles/main";
 
 .disable-animations {
   transition: none !important;
@@ -157,7 +156,7 @@ body.nav--disable-scroll {
     text-decoration: none;
     font-weight: 700;
 
-    @include sm() {
+    @include sm {
       padding: 36px 16px;
     }
   }

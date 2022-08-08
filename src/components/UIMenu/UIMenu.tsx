@@ -25,7 +25,7 @@ export const UIMenu = (props: IProps): React.ReactElement => {
   }, [showSidebar]);
 
   React.useEffect(() => {
-    if (window.pageYOffset > 0) {
+    if (window.scrollY > 0) {
       setScrollActive(true);
       setDisableAnimations(true);
     }

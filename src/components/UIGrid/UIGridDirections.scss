@@ -56,12 +56,10 @@
     }
   }
 
-  @include media-breakpoint-up(sm) {
     &.grid--medium-tiles-1 {
       > .tile {
         flex: 0 0 100%;
       }
-    }
 
     &.grid--medium-tiles-2 {
       > .tile {

@@ -1,4 +1,4 @@
-@import "../../@core/styles/@theme.scss";
+@import "src/styles/main";
 
 .ui-header-2 {
   max-height: 590px;
@@ -25,11 +25,9 @@
       float: none;
       padding: 50px;
 
-      @include media-breakpoint-up(sm) {
         padding: 75px 70px 0 0;
         max-width: 650px;
         float: right;
-      }
     }
 
     &-breadcrumbs {
@@ -93,16 +91,12 @@
     opacity: 0;
     visibility: hidden;
 
-    @include media-breakpoint-up(sm) {
       opacity: 0.4;
       visibility: visible;
-    }
   }
 
 
-  @include media-breakpoint-up(sm) {
     div {
       width: 50vw;
-    }
   }
 }

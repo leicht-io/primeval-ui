@@ -1,4 +1,4 @@
-@import "../../@core/styles/@theme.scss";
+@import "src/styles/main";
 
 @-webkit-keyframes skeletonGradient {
   0% {
@@ -61,8 +61,6 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @include fontFamily();
-
   color: $primaryText;
 
 
@@ -78,8 +76,6 @@ p, strong, i, b, u, pre, li {
   line-height: 1.58;
   margin-top:0;
   margin-bottom: -0.46em;
-
-  @include fontFamily();
 
   color: $primaryText;
 }

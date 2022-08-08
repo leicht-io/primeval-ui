@@ -1,6 +1,6 @@
 @import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
 @import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
-@import "../../@core/styles/@theme.scss";
+@import "src/styles/main";
 
 .slider-frame {
   height: 530px;
@@ -88,7 +88,6 @@ ul.glide__slides {
     line-height: 48px;
     margin-top: 0;
 
-    @include xs() {
       overflow: hidden;
       line-height: 36px;
       font-size: 36px;
@@ -97,7 +96,6 @@ ul.glide__slides {
       -webkit-box-orient: vertical;
       padding-bottom: 6px;
     }
-  }
 }
 
 .slide-overlay {
@@ -134,7 +132,7 @@ ul.glide__slides {
 .slide-content {
   width: 100%;
 
-  @include sm() {
+  @include sm {
     width: auto;
   }
 }

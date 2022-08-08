@@ -1,4 +1,4 @@
-@import "../../@core/styles/@theme.scss";
+@import "src/styles/main";
 
 .input-wrap {
   width: 100%;
@@ -58,7 +58,7 @@ form {
       align-items: center;
       align-content: stretch;
 
-      @include sm() {
+      @include sm {
         flex-direction: row;
         align-items: stretch;
         align-content: stretch;
