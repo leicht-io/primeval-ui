@@ -1,54 +1,55 @@
 import * as React from "react";
-import {UIButton, UIGrid, UIHeader, UIInput, UIPageContainer, UITextArea, UITypography} from "../../../../src";
+import {UIButton, UIGrid, UIInput, UIPageContainer, UITextArea, UITypography} from "../../../../src";
+import {UIHeader2} from "../../../../src/components/UIHeader2";
 
 export const FormElements = (): React.ReactElement => {
-    return (
-        <>
-            <UIHeader
-                size={"small"}
-                gradient={true}
-                breadcrumbs={"Home / Form Elements"}
-                title={{value: "Form Elements", skeleton: true}} />
+  return (
+    <>
+      <UIHeader2
+        subTitle={""}
+        excerpt={""}
+        breadcrumbs="Home / Form Elements"
+        title="Form Elements"/>
 
-            <UIPageContainer>
-                <UITypography type="h3">Buttons</UITypography>
+      <UIPageContainer>
+        <UITypography type="h3">Buttons</UITypography>
 
-                <UIButton text="Primary Button" type="primary"/>
-                <UIButton text="Danger Button" type="danger"/>
-                <UIButton text="Success Button" type="success"/>
-                <UIButton text="Disabled Button" type="success" disabled={true}/>
-            </UIPageContainer>
+        <UIButton text="Primary Button" type="primary"/>
+        <UIButton text="Danger Button" type="danger"/>
+        <UIButton text="Success Button" type="success"/>
+        <UIButton text="Disabled Button" type="success" disabled={true}/>
+      </UIPageContainer>
 
-            <UIPageContainer>
-                <UITypography type={'h3'}>Inputs</UITypography>
+      <UIPageContainer>
+        <UITypography type={'h3'}>Inputs</UITypography>
 
-                <UIGrid columns={"two"}>
-                    <UIInput
-                        tabIndex={1}
-                        label={'Input Label'}
-                        onChange={(value: string) => {
-                            // eslint-disable-next-line no-console
-                            console.log('Value:', value);
-                        }}/>
-                    <UIInput
-                        tabIndex={2}
-                        label={'Input Label'}
-                        onChange={(value: string) => {
-                            // eslint-disable-next-line no-console
-                            console.log('Value:', value);
-                        }}/>
-                </UIGrid>
+        <UIGrid columns={"two"}>
+          <UIInput
+            tabIndex={1}
+            label={'Input Label'}
+            onChange={(value: string) => {
+              // eslint-disable-next-line no-console
+              console.log('Value:', value);
+            }}/>
+          <UIInput
+            tabIndex={2}
+            label={'Input Label'}
+            onChange={(value: string) => {
+              // eslint-disable-next-line no-console
+              console.log('Value:', value);
+            }}/>
+        </UIGrid>
 
-                <UITextArea
-                    tabIndex={3}
-                    label={'Input Label'}
-                    onChange={(value: string) => {
-                        // eslint-disable-next-line no-console
-                        console.log('Value:', value);
-                    }}/>
+        <UITextArea
+          tabIndex={3}
+          label={'Input Label'}
+          onChange={(value: string) => {
+            // eslint-disable-next-line no-console
+            console.log('Value:', value);
+          }}/>
 
-                <UIButton text="Primary Button" type="primary" disabled={true}/>
-            </UIPageContainer>
-        </>
-    );
+        <UIButton text="Primary Button" type="primary" disabled={true}/>
+      </UIPageContainer>
+    </>
+  );
 }

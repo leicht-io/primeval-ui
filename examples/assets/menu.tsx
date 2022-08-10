@@ -25,7 +25,7 @@ export const Menu: IMenuItem[] = [
         link: '/other'
     }, {
         primaryButton: true,
-        title: 'Visit Shop',
+        title: 'Button Text',
         link: '/shop'
     }
 ];

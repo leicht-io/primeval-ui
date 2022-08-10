@@ -18,14 +18,10 @@ export const UIScrollProgress = React.memo((): React.ReactElement => {
   });
 
   const calculateProgress = (): void => {
-    const documentElement: HTMLElement = document.documentElement;
-    const documentBody: HTMLElement = document.body;
-    const scrollTop: string = 'scrollTop';
-    const scrollHeight: string = 'scrollHeight';
-    const value = (documentElement[Number(scrollTop)] || documentBody[Number(scrollTop)]) / ((documentElement[Number(scrollHeight)] || documentBody[Number(scrollHeight)]) - documentElement.clientHeight) * 100;
+    const scrollOffsetInPercentage = ((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100);
 
-    if(!isNaN(value)) {
-      setValue(value);
+    if(!isNaN(scrollOffsetInPercentage)) {
+      setValue(scrollOffsetInPercentage);
     }
   };
 

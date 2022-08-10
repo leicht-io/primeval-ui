@@ -1,10 +1,11 @@
 @import "src/styles/main";
 
 .ui-header-2 {
-  max-height: 590px;
+  height: 500px;
   width: 100vw;
 
   margin-top: 80px;
+  margin-bottom: 48px;
 
   position: relative;
 
@@ -21,16 +22,12 @@
     background-color: #f4f4f4;
 
     &-content {
-      max-width: calc(100% - 100px);
-      float: none;
-      padding: 50px;
-
-        padding: 75px 70px 0 0;
-        max-width: 650px;
-        float: right;
+      padding: 75px 70px 0 0;
+      max-width: 650px;
+      float: right;
     }
 
-    &-breadcrumbs {
+    &-breadcrumbs, &-sub-title {
       height: 30px;
       margin-bottom: 25px;
       text-align: left;
@@ -53,6 +50,13 @@
       font-size: 1.1875rem;
       line-height: 1.9375rem;
       margin-bottom: 1.5rem;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
   }
 
@@ -72,6 +76,13 @@
     padding-bottom: 10px;
     margin-bottom: 15px;
     margin-top: 0;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   div {
@@ -91,12 +102,12 @@
     opacity: 0;
     visibility: hidden;
 
-      opacity: 0.4;
-      visibility: visible;
+    opacity: 0.4;
+    visibility: visible;
   }
 
 
-    div {
-      width: 50vw;
+  div {
+    width: 50vw;
   }
 }
