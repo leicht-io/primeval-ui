@@ -1,15 +1,13 @@
 {
   "name": "@leicht.io/primeval-ui",
-  "version": "2.1.0",
+  "version": "2.1.0-beta.1",
   "description": "Primeval UI is a small and minimalistic UI framework with minimal dependencies.",
   "private": false,
   "scripts": {
-    "build:all": "npm run lint && npm run build:production:dist && npm run build:production:examples && npm run copy-scss",
-    "build:production:dist": "rimraf ./dist && tsc && npm run copy-scss",
-    "build:production:examples": "parcel build ./examples/index.html --dist-dir ./examples/dist",
+    "build": "rimraf ./dist && tsc && npm run copy-scss",
     "start": "parcel ./examples/index.html --dist-dir ./examples/dist",
     "copy-scss": "copy-files-from-to",
-    "release": "npm run build:all && npm publish",
+    "release": "npm run build && npm publish",
     "lint": "npm run lint:scss && npm run lint:ts",
     "lint:ts": "eslint src --ext .ts,.tsx,.js -c .eslintrc.js && npx tsc --noEmit --skipLibCheck --project ./tsconfig.json",
     "lint:ts:demo": "eslint examples --ext .ts,.tsx,.js -c .eslintrc.js && npx tsc --noEmit --skipLibCheck --project ./tsconfig.json",
