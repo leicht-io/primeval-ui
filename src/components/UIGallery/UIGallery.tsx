@@ -1,4 +1,5 @@
 import React from 'react';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import './UIGallery.scss';
 import {IProps} from './types';
 import Glide from 'react-glidejs';

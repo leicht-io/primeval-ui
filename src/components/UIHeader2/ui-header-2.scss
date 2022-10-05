@@ -18,6 +18,10 @@
   align-items: stretch;
   align-content: stretch;
 
+  &--small {
+    height: 250px;
+  }
+
   &--left {
     background-color: #f4f4f4;
 

@@ -3,8 +3,19 @@ import './ui-header-2.scss';
 import {UIHeaderTypes} from './types';
 
 export const UIHeader2 = (props: UIHeaderTypes) => {
+  const baseClass: string = 'ui-header-2';
+
+  const getClasses = (): string => {
+    let classes = baseClass;
+
+    if(props.size) {
+      classes += ' ui-header-2--small';
+    }
+
+    return classes;
+  };
   return (
-    <div className="ui-header-2" style={ {background: `url(${props.backgroundImageUrl})`, backgroundSize: 'cover'} }>
+    <div className={ getClasses() } style={ {background: `url(${props.backgroundImageUrl})`, backgroundSize: 'cover'} }>
       <div className="ui-header-2--left">
         <div className="ui-header-2--left-content">
           <div className="ui-header-2--left-breadcrumbs">{props.breadcrumbs}</div>

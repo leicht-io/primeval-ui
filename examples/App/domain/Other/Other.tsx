@@ -20,6 +20,7 @@ export const Other = (): React.ReactElement => {
   return (
     <>
       <UIHeader2
+        size="small"
         title='Other Components'
         breadcrumbs={'Home / Blog /'}/>
 
