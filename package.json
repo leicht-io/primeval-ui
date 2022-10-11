@@ -56,7 +56,8 @@
     "react-dom": "^18.2.0",
     "react-glidejs": "github:leicht-io/react-glidejs",
     "react-icons": "^4.4.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "react-swipeable": "^7.0.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.7.0",

@@ -3,11 +3,27 @@ import './UIMenu.scss';
 import {IProps} from './types';
 import {IMenuItem} from '../../types';
 import {BiMenu} from 'react-icons/bi';
+import { useSwipeable } from 'react-swipeable';
 
 export const UIMenu = (props: IProps): React.ReactElement => {
   const baseClass: string = 'ui-menu';
 
   const [toggleResponsiveMenu, setToggleResponsiveMenu] = React.useState<boolean>(false);
+
+  // TODO: toggle body scroll
+  const escFunction = React.useCallback((event) => {
+    if (event.key === 'Escape') {
+      setToggleResponsiveMenu(false);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    document.addEventListener('keydown', escFunction, false);
+
+    return () => {
+      document.removeEventListener('keydown', escFunction, false);
+    };
+  }, []);
 
   const getMenuItem = (menuItem: IMenuItem) => {
     return (
@@ -33,11 +49,17 @@ export const UIMenu = (props: IProps): React.ReactElement => {
     props.onNavigate(menuItem);
   };
 
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => {
+      setToggleResponsiveMenu(false);
+    },
+  });
+
   const getMenu = (large: boolean): React.ReactNode => {
     if (large) {
       return (
         <>
-          <nav className={ 'ui-menu--large ' + (toggleResponsiveMenu ? 'ui-menu--large-visible' : '') }>
+          <nav { ...swipeHandlers } className={ 'ui-menu--large ' + (toggleResponsiveMenu ? 'ui-menu--large-visible' : '') }>
             <div className="content">
               {props.menuItems.map((menuItem: IMenuItem, index: number) => {
                 return (
