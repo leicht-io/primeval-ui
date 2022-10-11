@@ -1,4 +1,4 @@
-// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
 
 @import "./reset";
 @import "./variables";
@@ -10,16 +10,10 @@
 
 body {
   overflow-x: hidden;
-  // font-family: 'Poppins', sans-serif;
-  // font-family; "pt-serif";
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
 ::selection {
   background: #0965b0;
   color: #fff;
 }
-
-/* input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 1000px white inset !important;
-} */

@@ -1,5 +1,4 @@
 export * from "./Typography"
-export * from "./Root"
 export * from "./FormElements"
 export * from "./Icons"
 export * from "./Gallery"

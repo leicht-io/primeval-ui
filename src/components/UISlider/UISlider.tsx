@@ -42,7 +42,7 @@ export const UISlider = (props: IProps): React.ReactElement => {
   if (!props.slides) {
     return (
       <div className="glide">
-        <UILoader size="small" color="light" />
+        <UILoader size="small" color="dark" />
       </div>
     );
   } else {

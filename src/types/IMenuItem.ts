@@ -3,7 +3,7 @@ export interface IMenuItem {
   link?: string;
   active?: boolean;
 
-  primaryButton?: boolean;
+  icon?: any;
 
   expanded?: boolean;
 

@@ -1,28 +1,42 @@
 import {IMenuItem} from '../../src';
+import {BiSpreadsheet} from "react-icons/bi";
+import * as React from "react";
+import {logo} from './logo';
 
 export const Menu: IMenuItem[] = [
     {
         title: 'Home',
         link: '/',
         active: true,
+        icon: logo
     }, {
         title: 'Typography',
-        link: '/typography'
+        link: '/typography',
+        icon: <BiSpreadsheet/>
     }, {
-        title: 'Form Elements',
-        link: '/form-elements'
+        title: 'Forms',
+        link: '/form-elements',
+        icon: <BiSpreadsheet/>
+
     }, {
         title: 'Icons',
-        link: '/icons'
+        link: '/icons',
+        icon: <BiSpreadsheet/>
+
     }, {
         title: 'Gallery',
-        link: '/gallery'
+        link: '/gallery',
+        icon: <BiSpreadsheet/>
+
     }, {
-        title: 'Grids & Cards',
-        link: '/grid-and-cards'
+        title: 'Cards',
+        link: '/grid-and-cards',
+        icon: <BiSpreadsheet/>
+
     }, {
         title: 'Other',
-        link: '/other'
+        link: '/other',
+        icon: <BiSpreadsheet/>
     }/* , {
         primaryButton: true,
         title: 'Button Text',

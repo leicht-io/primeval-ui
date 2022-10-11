@@ -19,3 +19,4 @@ export * from './UINotification';
 export * from './UITypography';
 export * from './UIFooter';
 export * from './UIMenu2';
+export * from './UITabs';

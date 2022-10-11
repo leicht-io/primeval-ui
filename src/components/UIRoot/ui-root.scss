@@ -1,1 +1,30 @@
 @import "../../styles/main";
+
+.root {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.page-content {
+  overflow-y: overlay;
+  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  padding-left: 0;
+  @include md()  {
+    margin: 8px 8px 0;
+    padding-left: 88px;
+    width: calc(100% - 16px);
+  }
+  margin: 88px 24px 0;
+}

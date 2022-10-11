@@ -1,593 +1,138 @@
 @use "sass:math";
 @import "../../styles/main";
 
-$breakpoint: 1300px;
-
-.disable-animations {
-  transition: none !important;
-  opacity: 1 !important;
-}
-
-body.nav--disable-scroll {
-  overflow: hidden;
-}
-
-.ui-navigation {
-  height: $navigation-height;
-
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -1px #0000000f;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-
+.ui-menu--large {
+  visibility: hidden;
+  left: -320px;
   position: fixed;
+  background: white;
+  width: 320px;
+  height: 100vh;
+  z-index: 9999;
+
+  transition: all 250ms linear;
+
+  &-visible {
+    visibility: visible;
+    left:0;
+  }
+}
+
+.ui-menu--backdrop {
+  position: fixed;
+  z-index: 9998;
+
   left: 0;
   right: 0;
   top: 0;
-  z-index: 999;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
 
-  transition: all 0.250s linear;
+  transition: all 250ms linear;
+  visibility: hidden;
+  opacity: 0;
 
-  &.transparent {
-    a {
-      color: #5f6368;
-    }
+  &-visible {
+    transition: all 250ms linear;
 
-    .logo svg:last-child {
-      fill: #242424;
-    }
+    visibility: visible;
+    opacity: 1;
+  }
+}
 
-    .logo svg:first-child .p2 {
-      fill: #ffffff;
-    }
+.ui-menu {
+  width: 88px;
+  padding-top: 24px;
+  height: 100vh;
+  background: linear-gradient(0deg, rgba(11, 87, 208, .08), rgba(11, 87, 208, .08)), linear-gradient(0deg, hsla(0, 0%, 46%, .02), hsla(0, 0%, 46%, .02)), #fff;
+  overflow: hidden;
+  position: fixed;
 
-    .logo svg:first-child .p1 {
-      fill: #242424;
+  display: none;
+  @include md() {
+    display: block;
+  }
+
+  &--top-wrapper {
+    display: block;
+
+    @include md() {
+      display: none;
     }
   }
 
-  &.sidebar-visible {
-    a {
-      color: $secondaryText;
-    }
+  &--top {
+    width: 100vw;
+    height: 66px;
+    position: fixed;
+    background: #fff;
 
-    .nav-item--primary.nav-item--primary {
-      a {
-        background: #fff;
-        text-decoration: none;
-        font-weight: 400;
-        color: $secondaryText;
-        margin: 0;
-        float: left;
-        width: 100%;
-        height: auto;
-        text-transform: none;
-        font-size: 16px;
-        justify-content: start;
-        padding: 22px 16px;
-      }
-    }
-  }
+    padding: 0 24px;
 
-  .logo {
-    height: $navigation-height;
-    width: 180px;
-
-    cursor: pointer;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     align-items: center;
-    align-content: center;
+    align-content: stretch;
 
-    a {
-      padding: 0;
-      margin-right: auto;
-    }
-
-    svg:first-child {
-      width: $base-spacing * 5;
-      height: $base-spacing * 5;
-      margin-right: $base-spacing * 2;
-      transition: all 0.250s linear;
-
-      .p1 {
-        fill: $white;
-        transition: fill 250ms linear;
-      }
-
-      .p2 {
-        transition: fill 250ms linear;
-        fill: #242424;
-      }
-    }
-
-    svg:last-child {
-      height: math.div($navigation-height, 1.5);
-      fill: $white;
-      transition: all 0.250s linear;
-    }
-  }
-
-  .nav-item {
-    &.nav-item--primary {
-      a {
-        background: #009688;
-        height: 32px;
-        padding: 0 15px;
-        margin-left: 15px;
-        margin-top: 32px;
-        border-radius: 4px;
-        text-transform: uppercase;
-        font-weight: 700;
-        color: white;
-        font-size: 14px;
-      }
-    }
-  }
-
-  &.nav-wrapper--active {
     @include cardShadow();
 
-    background-color: #fff;
-    height: 56px;
+    z-index: 999;
 
-    a, .nav-sub-btn {
-      color: $secondaryText;
-
-      svg {
-        fill: $secondaryText;
-      }
-    }
-
-    .logo {
-      svg:first-child {
-        width: $base-spacing * 5;
-        height: $base-spacing * 5;
-        transition: all 0.250s linear;
-
-        .p1 {
-          transition: fill 250ms linear;
-          fill: #242424;
-        }
-
-        .p2 {
-          transition: fill 250ms linear;
-          fill: $white;
-        }
-      }
-
-      svg:last-child {
-        height: $navigation-height * 0.5;
-        fill: #242424;
-        transition: all 0.250s linear;
-      }
-    }
-  }
-
-  a, .nav-sub-btn {
-    transition: all 0.100s linear;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 22px 16px;
-    text-decoration: none;
-    font-weight: 700;
-
-    @include sm {
-      padding: 36px 16px;
-    }
-  }
-
-  .nav-sub-btn, .nav-item {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-  }
-
-  .nav-item {
-    svg {
-      transition: all 0.100s linear;
-    }
-  }
-
-  .nav-item.active > a, .nav-item.active > span {
-    font-weight: 700;
-    color: $teal;
-
-    svg {
-      fill: $teal;
-    }
-  }
-
-  .nav-item.active {
-    .active {
-      font-weight: 700;
-
-      color: $teal;
-    }
-  }
-
-  > .nav-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    align-content: stretch;
-
-    width: 100vw;
-    max-width: 1300px;
-    padding-left: calc($base-spacing * 2);
-    padding-right: calc($base-spacing * 2);
-
-    .nav-logo {
-      width: auto;
-      height: $base-spacing * 5;
-    }
-
-    .nav .ui-i {
-      margin-left: $base-spacing;
-
-      svg {
-        width: $base-spacing * 2;
-        height: $base-spacing * 2;
-      }
-    }
-  }
-
-  .nav-sub, a {
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
-
-  .nav-hamburger {
-    cursor: pointer;
-    opacity: 1;
-    color: #fff;
-    transition: all .25s linear;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    align-content: stretch;
-
-    &:hover {
-      opacity: 0.75;
-      transition: all .25s linear;
-    }
-  }
-
-  .nav-responsive-header {
-    display: none;
-
-    svg:nth-child(2) {
-      margin-right: auto;
-      margin-left: 10px;
-    }
-  }
-
-  @media (max-width: $breakpoint) {
-    .nav-item--primary {
+    @include md() {
       display: none;
     }
 
-    .nav-responsive-button {
-      height: 80px !important;
+    .ui-menu--toggle {
+      margin-left: -12px;
+      cursor: pointer;
+      width: 48px;
+      height: 48px;
+
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
       align-content: stretch;
 
-      .nav-item--primary {
-        display: inherit;
-        border: none;
+      &:hover {
+        background: #eee;
+        border-radius: 50%;
+      }
 
-        a {
-          margin-top: 0 !important;
-
-        }
+      svg {
+        width:28px;
+        height:28px;
       }
     }
+  }
 
-    .nav {
-      overflow-y: scroll;
-    }
+  &--item {
+    height: 60px;
 
-    .nav-content {
-      overflow: hidden;
+    a {
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
       justify-content: flex-start;
-      align-items: stretch;
-      align-content: stretch;
-
-      height: calc(100vh - #{$base-spacing} * 7);
-    }
-
-    .nav-sub-btn, .nav-content > a {
-      padding: 18px;
-    }
-
-    .nav-item {
-      border-bottom: 1px solid #eee;
-
-      a {
-        padding: 22px 16px;
-      }
-    }
-
-    .nav-content {
-      span {
-        padding: 18px;
-        color: $secondaryText;
-        background: #fff;
-        text-decoration: none;
-        font-weight: 400;
-        float: left;
-        width: 100%;
-
-        &:hover {
-          font-weight: 700;
-          color: $teal;
-        }
-      }
-
-      a {
-        background: #fff;
-        text-decoration: none;
-        font-weight: 400;
-        color: $secondaryText;
-        float: left;
-        width: 100%;
-        justify-content: start;
-
-        &:hover {
-          font-weight: 700;
-          color: $teal;
-        }
-      }
-    }
-
-    .nav-sub-content {
-      opacity: 0;
-      visibility: hidden;
-      height: 0;
-
-      &.nav-sub-content--expanded {
-        opacity: 1;
-        visibility: visible;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        align-items: stretch;
-        align-content: stretch;
-        height: auto;
-        float: left;
-        width: 100%;
-        padding-top: 8px;
-        padding-bottom: 8px;
-        background: #f9f9f9;
-        border-bottom: 1px solid #eee;
-      }
-    }
-
-    .nav-active.nav-active {
-      transform: translateX(0%);
-      visibility: visible;
-      transition: all .5s ease-in-out;
-      box-shadow: 5px 0 20px 0 rgba(0, 0, 0, 0.25);
-    }
-
-    .nav {
-      transform: translateX(-100%);
-      visibility: hidden;
-      transition: all .5s ease-in-out;
-      position: fixed;
-      left: 0;
-      top: 0;
-      background: #fff;
-      bottom: 0;
-      width: 85%;
-      overflow: hidden;
-    }
-    .nav-sub-content a {
-      background: transparent;
-      padding: 8px 26px;
-    }
-
-    .nav-background {
-      position: fixed;
-      background: rgba(0, 0, 0, 0.2);
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-
-      opacity: 0;
-      visibility: hidden;
-      transition: all .5s ease-in-out;
-    }
-
-    .nav-background-active {
-      opacity: 1;
-      visibility: visible;
-      transition: all .5s ease-in-out;
-    }
-
-    .nav-responsive-header {
-      border-bottom: 1px solid #eee;
-      background: #f9f9f9;
-      padding: 0 $base-spacing * 2;
-      height: $base-spacing * 7;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      align-items: center;
-      align-content: center;
-
-      img {
-        height: $base-spacing * 4;
-      }
-
-      .ui-i--close {
-        width: 24px !important;
-        height: 24px !important;
-        cursor: pointer;
-      }
-    }
-
-  }
-
-  img.nav-logo {
-    height: 45px;
-  }
-
-  @media (min-width: #{$breakpoint + 1}) {
-    .nav-responsive-button {
-      display: none;
-    }
-
-    .nav-background, .nav-hamburger {
-      display: none;
-    }
-
-    .nav {
-      height: 56px;
-
-      margin-left: 80px;
-
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
       align-items: center;
       align-content: stretch;
     }
 
-    .nav-sub, .nav-item {
-      float: left;
-      overflow: hidden;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: .1px;
+    font-weight: 500;
+    padding: 0 4px;
+    margin-bottom: 4px;
+    text-align: center;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 4px;
     }
-
-    .nav-sub .nav-sub-btn {
-      font-size: 16px;
-      border: none;
-      outline: none;
-      padding: 36px 16px;
-      background-color: inherit;
-      font-family: inherit;
-      margin: 0;
-    }
-
-    .nav a:hover, .nav-sub:hover .nav-sub-btn {
-      color: $teal;
-      transition: all 0.100s linear;
-
-      svg {
-        transition: all 0.100s linear;
-        fill: $teal;
-      }
-    }
-
-    .nav-sub-content {
-      @include dropDownShadow();
-
-      position: absolute;
-      background-color: #fff;
-      width: 250px;
-      z-index: 1;
-      top: $base-spacing * 9;
-      border-radius: 8px;
-
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.150s linear;
-
-      &:after {
-        bottom: 100%;
-        left: 50%;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-        border: 8px solid rgba(255, 255, 255, 0);
-        border-bottom-color: #fff;
-        margin-left: -8px;
-      }
-
-      a {
-        float: left;
-        text-align: left;
-        text-decoration: none;
-        width: calc(100% - 32px);
-        padding: 16px;
-        color: $secondaryText;
-
-        &:first-child:hover {
-          border-top-left-radius: $base-spacing;
-          border-top-right-radius: $base-spacing;
-        }
-
-        &:last-child:hover {
-          border-bottom-left-radius: $base-spacing;
-          border-bottom-right-radius: $base-spacing;
-        }
-
-        &:hover {
-          background-color: #eee;
-          color: black;
-        }
-      }
-    }
-
-    .nav-sub:hover .nav-sub-content {
-      opacity: 1;
-      visibility: visible;
-      transition: all 0.150s linear;
-    }
-
-    .nav-sub-btn {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-    }
-  }
-}
-
-.nav-item--primary {
-  margin-left: auto;
-
-  a {
-    margin-top: 0 !important;
-    height: 48px !important;
-    border-radius: 24px !important;
-    text-transform: none !important;
-    font-size: 14px !important;
-    padding-left: 24px !important;
-    padding-right: 24px !important;
   }
 }

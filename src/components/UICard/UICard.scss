@@ -1,10 +1,8 @@
 @import "../../styles/main";
 
 .ui-image {
-  @include cardShadow();
-
   position: relative;
-  border-radius: $base-spacing;
+  border-radius: $base-spacing * 2;
   overflow: hidden;
   transition: all 0.3s linear;
   display: flex;
