@@ -33,8 +33,8 @@ export const UIMenu = (props: IProps): React.ReactElement => {
           onClick={ (event) => {
             handleClick(event, menuItem);
           } }>
-          {menuItem.icon}
-          {menuItem.title}
+          <span>{menuItem.icon}</span>
+          <span>{menuItem.title}</span>
         </a>
       </div>
     );

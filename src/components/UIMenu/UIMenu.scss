@@ -5,18 +5,46 @@
   visibility: hidden;
   left: -320px;
   position: fixed;
-  background: white;
+  background: linear-gradient(0deg, #0b57d014, #0b57d014), linear-gradient(0deg, #75757505, #75757505), #fff;
   width: 320px;
   height: 100vh;
   z-index: 9999;
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
+padding: 12px;
 
   transition: all 250ms linear;
 
   &-visible {
     visibility: visible;
     left:0;
+  }
+
+  .ui-menu--item {
+    padding:0 16px;
+
+    height: 48px;
+    border-radius: 24px;
+
+    &:hover {
+      background: rgba(68, 71, 70, 0.08);
+
+    }
+  }
+
+  .ui-menu--item a {
+    height: 100%;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
+
+    svg {
+      margin: 0 16px 0 0;
+    }
   }
 }
 

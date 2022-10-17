@@ -2,28 +2,11 @@ import React from 'react';
 import {ITab, Types} from './types';
 import './tabs.scss';
 import {Link, useLocation} from 'react-router-dom';
-// import { useWindowSize } from '../../hooks';
-
 export const UITabs = (types: Types): React.ReactElement => {
   const location = useLocation();
-  // const [width] = useWindowSize();
 
   const tabsWrapper: React.RefObject<HTMLDivElement> = React.useRef(null);
   const [selectedTab, setSelectedTab] = React.useState<string>();
-
-  const [overflow, setOverflow] = React.useState<boolean>(false);
-
-  /* React.useEffect(() => {
-      if (tabsWrapper && tabsWrapper.current && tabsWrapper.current.scrollWidth > width) {
-        if (!overflow) {
-          setOverflow(true);
-        }
-      } else {
-        if (overflow) {
-          setOverflow(false);
-        }
-      }
-    }, [width]); */
 
   React.useEffect(() => {
     const paths: string[] = location.pathname.split('/');
@@ -34,7 +17,7 @@ export const UITabs = (types: Types): React.ReactElement => {
   return (
     <div className="tabs-wrapper">
       <div
-        className={ `tabs ${overflow ? 'tabs--overflow' : ''}` }
+        className={ 'tabs' }
         ref={ tabsWrapper }>
         {types.tabs.map((tab: ITab, index: number) => {
           return (
@@ -46,7 +29,7 @@ export const UITabs = (types: Types): React.ReactElement => {
                   {tab.icon && (tab.icon)}
                 </div>
 
-                {tab.title}
+                <span className={ 'ui-tab--text' }>{tab.title}</span>
               </Link>
             </div>
           );
