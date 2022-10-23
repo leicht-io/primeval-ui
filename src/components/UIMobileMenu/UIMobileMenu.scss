@@ -1,0 +1,187 @@
+@use "sass:math";
+@import "../../styles/main";
+
+.ui-menu--large {
+  visibility: hidden;
+  left: -320px;
+  position: fixed;
+  background: linear-gradient(0deg, #0b57d014, #0b57d014), linear-gradient(0deg, #75757505, #75757505), #fff;
+  width: 320px;
+  height: 100vh;
+  z-index: 9999;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  padding: 12px;
+
+  transition: all 250ms linear;
+
+  &-visible {
+    visibility: visible;
+    left: 0;
+  }
+
+  .ui-menu--item {
+    padding: 0 16px;
+
+    height: 48px;
+    border-radius: 24px;
+
+    &:hover {
+      background: rgba(68, 71, 70, 0.08);
+
+    }
+  }
+
+  .ui-menu--item a {
+    height: 100%;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
+
+    svg {
+      margin: 0 16px 0 0;
+    }
+  }
+}
+
+.ui-menu--backdrop {
+  position: fixed;
+  z-index: 9998;
+
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+
+  transition: all 250ms linear;
+  visibility: hidden;
+  opacity: 0;
+
+  &-visible {
+    transition: all 250ms linear;
+
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.ui-menu {
+  width: 88px;
+  padding-top: 24px;
+  height: 100vh;
+  background: linear-gradient(0deg, rgba(11, 87, 208, .08), rgba(11, 87, 208, .08)), linear-gradient(0deg, hsla(0, 0%, 46%, .02), hsla(0, 0%, 46%, .02)), #fff;
+  overflow: hidden;
+  position: fixed;
+  z-index: 3;
+  display: none;
+
+  @include md() {
+    display: block;
+  }
+
+  &--top-wrapper {
+    display: block;
+
+    @include md() {
+      display: none;
+    }
+  }
+
+  &--logo {
+    height: 30px;
+  }
+
+  &--submenu {
+    width: 300px;
+    position: fixed;
+    left: 88px;
+    background: linear-gradient(0deg, #0b57d014, #0b57d014), linear-gradient(0deg, #75757505, #75757505), #fff;
+    height: 100vh;
+    z-index: 2;
+    border-left: 1px solid #d8d8d8;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  &--top {
+    width: 100vw;
+    height: 66px;
+    position: fixed;
+    background: #fff;
+
+    padding: 0 24px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+
+    @include cardShadow();
+
+    z-index: 999;
+
+    @include md() {
+      display: none;
+    }
+
+    .ui-menu--toggle {
+      margin-left: -12px;
+      cursor: pointer;
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      align-content: stretch;
+
+      &:hover {
+        background: #eee;
+        border-radius: 50%;
+      }
+
+      svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+
+  &--item {
+    height: 60px;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: stretch;
+    }
+
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: .1px;
+    font-weight: 500;
+    padding: 0 4px;
+    margin-bottom: 4px;
+    text-align: center;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 4px;
+    }
+  }
+}

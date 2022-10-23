@@ -1,14 +1,14 @@
 import React from 'react';
-import './UIMenu.scss';
+import './UIMobileMenu.scss';
 import {IProps} from './types';
 import {IMenuItem} from '../../types';
+import {BiMenu} from 'react-icons/bi';
 import { useSwipeable } from 'react-swipeable';
 
-export const UIMenu = (props: IProps): React.ReactElement => {
+export const UIMobileMenu = (props: IProps): React.ReactElement => {
   const baseClass: string = 'ui-menu';
 
   const [toggleResponsiveMenu, setToggleResponsiveMenu] = React.useState<boolean>(false);
-  const [showSubMenu, setShowSubMenu] = React.useState<boolean>(false);
 
   // TODO: Refactor menu to responsive menu and desktop menu
   // TODO: toggle body scroll
@@ -45,7 +45,6 @@ export const UIMenu = (props: IProps): React.ReactElement => {
     if(menuItem.menuItems && menuItem.menuItems.length > 0) {
       event.preventDefault();
 
-      setShowSubMenu(true);
     } else {
       setToggleResponsiveMenu(false);
 
@@ -102,13 +101,22 @@ export const UIMenu = (props: IProps): React.ReactElement => {
 
   return (
     <>
-      {getMenu(false)}
-
-      {showSubMenu && (
-        <div className={ 'ui-menu--submenu' }>
-
+      <div className={ 'ui-menu--top-wrapper' }>
+        <div className={ 'ui-menu--top' }>
+          <div
+            onClick={ () => {
+              setToggleResponsiveMenu(!toggleResponsiveMenu);
+            } }
+            className="ui-menu--toggle">
+            <BiMenu />
+          </div>
+          <div className={ 'ui-menu--logo' }>
+            {props.logo}
+          </div>
         </div>
-      )}
+
+        {getMenu(true)}
+      </div>
 
       <div
         onClick={ () => {
