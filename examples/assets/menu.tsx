@@ -14,6 +14,15 @@ export const Menu: IMenuItem[] = [
         link: '/typography',
         icon: <BiSpreadsheet/>
     }, {
+        title: 'Elements',
+        link: '/elements',
+        icon: <BiSpreadsheet/>,
+        menuItems: [{
+            title: 'Icons',
+            link: '/icons',
+            icon: <BiSpreadsheet/>,
+        }        ]
+    }, {
         title: 'Forms',
         link: '/form-elements',
         icon: <BiSpreadsheet/>

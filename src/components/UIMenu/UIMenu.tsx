@@ -9,7 +9,9 @@ export const UIMenu = (props: IProps): React.ReactElement => {
   const baseClass: string = 'ui-menu';
 
   const [toggleResponsiveMenu, setToggleResponsiveMenu] = React.useState<boolean>(false);
+  const [showSubMenu, setShowSubMenu] = React.useState<boolean>(false);
 
+  // TODO: Refactor menu to responsive menu and desktop menu
   // TODO: toggle body scroll
   const escFunction = React.useCallback((event) => {
     if (event.key === 'Escape') {
@@ -40,13 +42,19 @@ export const UIMenu = (props: IProps): React.ReactElement => {
     );
   };
 
-  const handleClick = (event: any, menuItem: IMenuItem) => {
-    setToggleResponsiveMenu(false);
+  const handleClick = (event: any, menuItem: IMenuItem): void => {
+    if(menuItem.menuItems && menuItem.menuItems.length > 0) {
+      event.preventDefault();
 
-    event.preventDefault();
-    window.scrollTo(0, 0);
+      setShowSubMenu(true);
+    } else {
+      setToggleResponsiveMenu(false);
 
-    props.onNavigate(menuItem);
+      event.preventDefault();
+      window.scrollTo(0, 0);
+
+      props.onNavigate(menuItem);
+    }
   };
 
   const swipeHandlers = useSwipeable({
@@ -104,12 +112,21 @@ export const UIMenu = (props: IProps): React.ReactElement => {
             className="ui-menu--toggle">
             <BiMenu />
           </div>
+          <div className={ 'ui-menu--logo' }>
+            {props.logo}
+          </div>
         </div>
 
         {getMenu(true)}
       </div>
 
       {getMenu(false)}
+
+      {showSubMenu && (
+        <div className={ 'ui-menu--submenu' }>
+
+        </div>
+      )}
 
       <div
         onClick={ () => {

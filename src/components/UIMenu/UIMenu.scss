@@ -11,17 +11,17 @@
   z-index: 9999;
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
-padding: 12px;
+  padding: 12px;
 
   transition: all 250ms linear;
 
   &-visible {
     visibility: visible;
-    left:0;
+    left: 0;
   }
 
   .ui-menu--item {
-    padding:0 16px;
+    padding: 0 16px;
 
     height: 48px;
     border-radius: 24px;
@@ -56,7 +56,7 @@ padding: 12px;
   right: 0;
   top: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
 
   transition: all 250ms linear;
   visibility: hidden;
@@ -77,8 +77,9 @@ padding: 12px;
   background: linear-gradient(0deg, rgba(11, 87, 208, .08), rgba(11, 87, 208, .08)), linear-gradient(0deg, hsla(0, 0%, 46%, .02), hsla(0, 0%, 46%, .02)), #fff;
   overflow: hidden;
   position: fixed;
-
+  z-index: 3;
   display: none;
+
   @include md() {
     display: block;
   }
@@ -89,6 +90,24 @@ padding: 12px;
     @include md() {
       display: none;
     }
+  }
+
+  &--logo {
+    height: 30px;
+  }
+
+  &--submenu {
+    width: 300px;
+    position: fixed;
+    left: 88px;
+    background: linear-gradient(0deg, #0b57d014, #0b57d014), linear-gradient(0deg, #75757505, #75757505), #fff;
+    height: 100vh;
+    z-index: 2;
+    border-left: 1px solid #d8d8d8;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 
   &--top {
@@ -133,8 +152,8 @@ padding: 12px;
       }
 
       svg {
-        width:28px;
-        height:28px;
+        width: 28px;
+        height: 28px;
       }
     }
   }

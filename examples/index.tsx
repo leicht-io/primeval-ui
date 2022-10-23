@@ -6,6 +6,7 @@ import {SocialIcon} from "../src/components/UIFooter/types";
 import {createRoot} from 'react-dom/client';
 import {UIRoot} from "../src/components/UIRoot";
 import {Menu} from "./assets/menu";
+import {logo} from '../examples/assets/logo';
 
 const Application = (): React.ReactElement => {
     const socialIcons: SocialIcon[] = [
@@ -17,7 +18,9 @@ const Application = (): React.ReactElement => {
     return (
         <React.StrictMode>
             <BrowserRouter>
-                <UIRoot menu={Menu}>
+                <UIRoot
+                    logo={logo}
+                    menu={Menu}>
 
                     {appRoutes}
 
