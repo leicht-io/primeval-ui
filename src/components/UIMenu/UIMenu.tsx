@@ -7,6 +7,8 @@ import { useSwipeable } from 'react-swipeable';
 export const UIMenu = (props: IProps): React.ReactElement => {
   const baseClass: string = 'ui-menu';
 
+  const currentSubMenuItem = React.useRef();
+
   const [toggleResponsiveMenu, setToggleResponsiveMenu] = React.useState<boolean>(false);
   const [showSubMenu, setShowSubMenu] = React.useState<boolean>(false);
 
@@ -42,6 +44,21 @@ export const UIMenu = (props: IProps): React.ReactElement => {
   };
 
   const handleClick = (event: any, menuItem: IMenuItem): void => {
+    if(!menuItem.menuItems || menuItem.menuItems.length === 0) {
+      event.preventDefault();
+      setShowSubMenu(false);
+    }
+
+    console.log(menuItem, currentSubMenuItem.current);
+    if(currentSubMenuItem.current && menuItem.link === currentSubMenuItem.current.link) {
+      event.preventDefault();
+
+      setShowSubMenu(false);
+      return;
+    }
+
+    currentSubMenuItem.current = null;
+
     if(menuItem.menuItems && menuItem.menuItems.length > 0) {
       event.preventDefault();
 
@@ -53,6 +70,10 @@ export const UIMenu = (props: IProps): React.ReactElement => {
       window.scrollTo(0, 0);
 
       props.onNavigate(menuItem);
+    }
+
+    if(menuItem.menuItems) {
+      currentSubMenuItem.current = menuItem;
     }
   };
 
