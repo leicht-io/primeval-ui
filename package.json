@@ -1,6 +1,6 @@
 {
   "name": "@leicht.io/primeval-ui",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Primeval UI is a small and minimalistic UI framework with minimal dependencies.",
   "private": false,
   "scripts": {
