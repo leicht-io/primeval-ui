@@ -45,18 +45,6 @@ export const UIGallery = (props: IProps): React.ReactElement => {
   };
   useEventListener('keyup', handleEventListeners);
 
-  const getThumbnailImageUrl = (photo: IPhoto): string => {
-    let url: string = (props.baseUrl ? props.baseUrl : '');
-
-    if (photo && photo.mediumThumbPath) {
-      url += photo.mediumThumbPath;
-    } else if (photo && photo.fullSizePath) {
-      url += photo.fullSizePath;
-    }
-
-    return url;
-  };
-
   return (
     <>
       {
@@ -88,7 +76,7 @@ export const UIGallery = (props: IProps): React.ReactElement => {
                 return (
                   <div key={ index } className="slider__img_wrapper">
                     <img alt={ `Slide #${index}` }
-                      src={ (props.baseUrl ? props.baseUrl : '') + photo.fullSizePath } />
+                      src={ photo.imageUrl } />
                   </div>
                 );
               })}
@@ -103,7 +91,7 @@ export const UIGallery = (props: IProps): React.ReactElement => {
             <div className="grid-item" key={ index }>
               <UICard
                 alt={ photo ? photo.description : '' }
-                backgroundUrl={ getThumbnailImageUrl(photo) }
+                backgroundUrl={ photo.imageUrl }
                 onClick={ () => {
                   if (photo) {
                     setIndex(index);
