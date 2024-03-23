@@ -3,7 +3,6 @@ import React from 'react';
 import './UISlider.scss';
 import Glide from '@glidejs/glide';
 import {UILoader} from '../UILoader';
-import {ISlide} from '../../types';
 
 // TODO: Use React integration of Glide.
 // TODO: use animations

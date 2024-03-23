@@ -1,4 +1,3 @@
-import {IHeaderImage} from './IHeaderImage';
 import {ITag} from './ITag';
 
 export interface ISlide {
