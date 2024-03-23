@@ -91,7 +91,7 @@ export const UIGallery = (props: IProps): React.ReactElement => {
             <div className="grid-item" key={ index }>
               <UICard
                 alt={ photo ? photo.description : '' }
-                backgroundUrl={ photo.imageUrl }
+                backgroundUrl={ photo ? photo.imageUrl : '' }
                 onClick={ () => {
                   if (photo) {
                     setIndex(index);
