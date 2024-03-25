@@ -26,8 +26,7 @@ const Application = (): React.ReactElement => {
 
                     <UIFooter
                         text="© 2022 Primeval UI"
-                        socialIcons={socialIcons}
-                    />
+                        socialIcons={socialIcons}/>
                 </UIRoot>
             </BrowserRouter>
         </React.StrictMode>

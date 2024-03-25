@@ -12,8 +12,6 @@ export const UIRoot = (props): React.ReactElement => {
   return (
     <div className={ 'root' }>
       <div>
-        <UIScrollProgress />
-
         <UIMenuNew
           onNavigate={ (destination: IMenuItem) => {
             navigate(destination.link as any);
