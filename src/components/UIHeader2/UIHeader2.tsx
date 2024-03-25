@@ -15,14 +15,14 @@ export const UIHeader2 = (props: UIHeaderTypes) => {
     return classes;
   };
   return (
-    <div className={ getClasses() } style={ {background: `url(${props.backgroundImageUrl})`, backgroundSize: 'cover'} }>
-      <div className={ 'ui-header-2--overlay' } />
-
-      <div>
+    <div className={ getClasses() }>
+      <div className={ 'header--text' }>
         <h1>{props.title.substr(0, 40)}</h1>
         <p>{props.subTitle?.substr(0, 100)}</p>
       </div>
 
+      <div className={ 'header--image' } style={ {background: `url(${props.backgroundImageUrl})`, backgroundSize: 'cover'} }>
+      </div>
     </div>
   );
 };

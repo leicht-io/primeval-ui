@@ -1,22 +1,21 @@
 import {IMenuItem} from '../../src';
 import {BiSpreadsheet} from "react-icons/bi";
 import * as React from "react";
-import {logo} from './logo';
 
 export const Menu: IMenuItem[] = [
     {
         title: 'Home',
         link: '/',
         active: true,
-        icon: logo
+        icon: "home-alt"
     }, {
         title: 'Typography',
         link: '/typography',
-        icon: <BiSpreadsheet/>
+        icon: "home-alt"
     }, {
         title: 'Elements',
         link: '/elements',
-        icon: <BiSpreadsheet/>,
+        icon: "cable-car",
         menuItems: [{
             title: 'Icons',
             link: '/icons',
@@ -25,30 +24,23 @@ export const Menu: IMenuItem[] = [
     }, {
         title: 'Forms',
         link: '/form-elements',
-        icon: <BiSpreadsheet/>
+        icon: "cable-car",
 
     }, {
         title: 'Icons',
         link: '/icons',
-        icon: <BiSpreadsheet/>
-
+        icon: "cable-car",
     }, {
         title: 'Gallery',
         link: '/gallery',
-        icon: <BiSpreadsheet/>
-
+        icon: "cable-car",
     }, {
         title: 'Cards',
         link: '/grid-and-cards',
-        icon: <BiSpreadsheet/>
-
+        icon: "cable-car",
     }, {
         title: 'Other',
         link: '/other',
-        icon: <BiSpreadsheet/>
-    }/* , {
-        primaryButton: true,
-        title: 'Button Text',
-        link: '/shop'
-    } */
+        icon: "cable-car",
+    }
 ];

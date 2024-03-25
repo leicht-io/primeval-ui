@@ -73,12 +73,16 @@
 .ui-menu {
   width: 88px;
   padding-top: 24px;
-  height: 100vh;
   background: linear-gradient(0deg, rgba(11, 87, 208, .08), rgba(11, 87, 208, .08)), linear-gradient(0deg, hsla(0, 0%, 46%, .02), hsla(0, 0%, 46%, .02)), #fff;
   overflow: hidden;
   position: fixed;
   z-index: 3;
   display: none;
+
+  height: calc(100px);
+  margin-left: 8px;
+  margin-top: 8px;
+  border-radius: 12px;
 
   @include md() {
     display: block;
