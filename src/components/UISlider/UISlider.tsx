@@ -3,7 +3,6 @@ import React from 'react';
 import './UISlider.scss';
 import Glide from '@glidejs/glide';
 import {UILoader} from '../UILoader';
-import {ISlide} from '../../types';
 
 // TODO: Use React integration of Glide.
 // TODO: use animations
@@ -27,18 +26,6 @@ export const UISlider = (props: IProps): React.ReactElement => {
     }
   }, [props.slides]);
 
-  const getSlideImageUrl = (slide: ISlide): string => {
-    let url: string = (props.basePath ? props.basePath : '');
-
-    if(typeof slide.headerImage === 'string') {
-      url += slide.headerImage;
-    } else {
-      url += slide.headerImage.fullSize.path;
-    }
-
-    return url;
-  };
-
   if (!props.slides) {
     return (
       <div className="glide">
@@ -56,7 +43,7 @@ export const UISlider = (props: IProps): React.ReactElement => {
                   className="glide__slide slider-frame"
                   key={ index }
                   style={ {
-                    backgroundImage: `url(${getSlideImageUrl(slide)})`,
+                    backgroundImage: `url(${slide.headerImage})`,
                     backgroundPosition: 'center 45%'
                   } }>
                   <div className="slide-content">

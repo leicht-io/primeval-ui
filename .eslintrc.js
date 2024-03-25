@@ -12,7 +12,6 @@ module.exports = {
         'plugin:@typescript-eslint/eslint-recommended',
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "plugin:security/recommended"
     ],
     "ignorePatterns": [],
     parser: '@typescript-eslint/parser',
@@ -137,7 +136,6 @@ module.exports = {
         "id-match": "error",
         "jsdoc/check-alignment": "error",
         "jsdoc/check-indentation": "error",
-        "jsdoc/newline-after-description": "error",
         "linebreak-style": [
             "off",
             "windows"

@@ -1,4 +1,3 @@
-import {IHeaderImage} from './IHeaderImage';
 import {ITag} from './ITag';
 
 export interface ISlide {
@@ -8,7 +7,7 @@ export interface ISlide {
   slug?: string;
   excerpt?: string;
   readTimeInSeconds?: number;
-  headerImage: IHeaderImage | string;
+  headerImage: string;
   tags?: ITag | null;
   status?: string;
   category?: any;

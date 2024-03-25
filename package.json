@@ -1,6 +1,6 @@
 {
   "name": "@leicht.io/primeval-ui",
-  "version": "2.1.0-beta.1",
+  "version": "2.2.2",
   "description": "Primeval UI is a small and minimalistic UI framework with minimal dependencies.",
   "private": false,
   "scripts": {
@@ -11,7 +11,7 @@
     "lint": "npm run lint:scss && npm run lint:ts",
     "lint:ts": "eslint src --ext .ts,.tsx,.js -c .eslintrc.js && npx tsc --noEmit --skipLibCheck --project ./tsconfig.json",
     "lint:ts:demo": "eslint examples --ext .ts,.tsx,.js -c .eslintrc.js && npx tsc --noEmit --skipLibCheck --project ./tsconfig.json",
-    "lint:scss": "node ./node_modules/stylelint/bin/stylelint.js \"./src/**/*.scss\" --cache --cache-location \".stylelintcache\" --syntax scss"
+    "lint:scss": "node ./node_modules/stylelint/bin/stylelint.mjs \"./src/**/*.scss\" --cache --cache-location \".stylelintcache\""
   },
   "targets": {
     "main": false,
@@ -55,8 +55,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-glidejs": "github:leicht-io/react-glidejs",
-    "react-icons": "^5.0.1",
     "react-router-dom": "^6.22.3",
+    "react-icons": "^5.0.1",
     "react-swipeable": "^7.0.1"
   },
   "devDependencies": {
@@ -81,7 +81,7 @@
     "process": "^0.11.10",
     "rimraf": "^5.0.5",
     "sass": "^1.72.0",
-    "stylelint": "^16.3.0",
+    "stylelint": "16.3.0",
     "typescript": "^5.4.3"
   }
 }
