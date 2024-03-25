@@ -5,9 +5,10 @@ import 'boxicons';
 export const UIMenuNew = (props) => {
   const [toggle, setToggle] = React.useState<boolean>(true);
   const [darkMode, setDarkMode] = React.useState<boolean>(false);
+  const [childVisible, setChildVisible] = React.useState<string>(false);
 
   return (
-    <nav className={ 'sidebar' + (toggle ? '' :' close') }>
+    <nav className={ 'sidebar' + (toggle ? '' : ' close') }>
       <header>
         <div className="image-text">
           <span className="image">
@@ -39,14 +40,42 @@ export const UIMenuNew = (props) => {
               return (
                 <li
                   onClick={ () => {
-                    props.onNavigate(menuItem);
+                    const hasChildren = menuItem.menuItems && menuItem.menuItems.length> 0;
+
+                    if(!hasChildren) {
+                      props.onNavigate(menuItem);
+                    } else {
+                      setChildVisible(menuItem.link);
+                    }
                   } }
                   key={ index }
-                  className="nav-link">
-                  <a href="">
-                    <i className={ `bx bx-${menuItem.icon} icon` }></i>
-                    <span className="text nav-text">{menuItem.title}</span>
+                  className={ `nav-link ${menuItem.menuItems && menuItem.menuItems.length ? 'nav-link--with-children' : ''}` }>
+                  <a href="#">
+                    <span>
+                      <i className={ `bx bx-${menuItem.icon} icon` } />
+                      <span className="text nav-text">
+                        {menuItem.title}
+                      </span>
+                    </span>
+
+                    {(menuItem.menuItems && menuItem.menuItems.length > 0) && (
+                      <>
+                        <i className={ 'bx bx-chevron-down icon' } />
+                      </>
+                    )}
                   </a>
+
+                  <div>
+                    {menuItem.menuItems && childVisible === menuItem.link && menuItem.menuItems.map((subMenu, index) => {
+                      return (
+                        <span
+                          key={ index }
+                          className="text nav-text">
+                          {subMenu.title}
+                        </span>
+                      );
+                    })}
+                  </div>
                 </li>
               );
             })}
@@ -66,7 +95,7 @@ export const UIMenuNew = (props) => {
               <i className="bx bx-moon icon moon"></i>
               <i className="bx bx-sun icon sun"></i>
             </div>
-            <span className="mode-text text">{darkMode ? 'Light Mode': 'Dark Mode'}</span>
+            <span className="mode-text text">{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
 
             <div
               onClick={ () => {

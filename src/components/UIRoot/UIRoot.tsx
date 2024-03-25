@@ -1,20 +1,19 @@
 import React from 'react';
 import './ui-root.scss';
-import {UIScrollProgress} from '../UIScrollProgress';
 import {IMenuItem} from '../../types';
 import {useNavigate} from 'react-router-dom';
 import {UIMenuNew} from '../UIMenuNew/UIMenuNew';
 
 export const UIRoot = (props): React.ReactElement => {
   const navigate = useNavigate();
-  const [menuItems] = React.useState<IMenuItem[]>(props.menu);
+  const [menuItems, setMenuItems ] = React.useState<IMenuItem[]>(props.menu);
 
   return (
     <div className={ 'root' }>
       <div>
         <UIMenuNew
           onNavigate={ (destination: IMenuItem) => {
-            navigate(destination.link as any);
+            navigate(destination.link);
           } }
           menuItems={ menuItems }
           logo={ props.logo } />

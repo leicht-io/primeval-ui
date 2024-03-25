@@ -186,20 +186,42 @@ body.dark .sidebar header .toggle {
   transition: var(--tran-05);
 }
 
+li.nav-link.nav-link--with-children {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+}
+
 .sidebar li a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: stretch;
+
   list-style: none;
   height: 100%;
   background-color: transparent;
-  display: flex;
-  align-items: center;
-  height: 100%;
   width: 100%;
   border-radius: 6px;
   text-decoration: none;
   transition: var(--tran-03);
+
+  > span {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+  }
 }
 
-.sidebar li a:hover {
+.sidebar li a:hover, .sidebar li:active {
   background-color: var(--primary-color);
 }
 
